@@ -79,7 +79,8 @@ def create_db():
         postcode TEXT,
         join_date TEXT,
         status TEXT,
-        acquisition_source TEXT
+        acquisition_source TEXT,
+        churn_date TEXT
     );
 
     CREATE TABLE subscriptions (
@@ -104,101 +105,77 @@ def create_db():
     );
     ''')
 
-    # 1. Marketing Events Generation (More events!)
-    print("Generating a large number of marketing events...")
+    # 1. Marketing Events
     marketing_events = []
-    # Генеруємо приблизно 200-300 івентів за весь період
     for _ in range(250):
         m_type = random.choice(MARKETING_TYPES)
-        # Рандомна дата початку протягом всього періоду
         start_ts = random.randint(int(START_DATE.timestamp()), int(END_DATE.timestamp()))
         start_m_date = datetime.fromtimestamp(start_ts)
-        duration = random.randint(3, 21) # Коротші, але інтенсивніші кампанії
-        end_m_date = start_m_date + timedelta(days=duration)
-        if end_m_date > END_DATE: end_m_date = END_DATE
-        
+        end_m_date = start_m_date + timedelta(days=random.randint(3, 21))
         area = 'Island Wide' if m_type['scope'] == 'island' else random.choice(list(POSTCODES_CONFIG.keys()))
-        
-        marketing_events.append((
-            m_type['type'], 
-            f"{m_type['type']} {random.choice(['Promo', 'Drive', 'Blast', 'Sale', 'Special'])} {start_m_date.strftime('%b %Y')}",
-            start_m_date.strftime('%Y-%m-%d'),
-            end_m_date.strftime('%Y-%m-%d'),
-            m_type['cost'] + random.randint(-100, 500), # Варіативність бюджету
-            area
-        ))
+        marketing_events.append((m_type['type'], f"{m_type['type']} Campaign", start_m_date.strftime('%Y-%m-%d'), end_m_date.strftime('%Y-%m-%d'), m_type['cost'], area))
     
-    # Сортуємо за датою для зручності
-    marketing_events.sort(key=lambda x: x[2])
     cursor.executemany('INSERT INTO marketing_events (event_type, campaign_name, start_date, end_date, budget, target_area) VALUES (?,?,?,?,?,?)', marketing_events)
 
     # 2. Infrastructure
-    print("Generating infrastructure...")
     infra_data = {}
     for district in POSTCODES_CONFIG.keys():
         for _ in range(200):
             pc = generate_random_postcode(district)
             infra_data[pc] = random.random() < POSTCODES_CONFIG[district]['coverage']
-    
     cursor.executemany('INSERT INTO infrastructure VALUES (?, ?)', list(infra_data.items()))
 
     # 3. Customers & Subscriptions
-    print("Generating customers with marketing impact...")
     cust_data = []
     sub_data = []
-    
     districts = list(POSTCODES_CONFIG.keys())
     weights = [POSTCODES_CONFIG[d]['weight'] for d in districts]
 
     for i in range(TOTAL_HOUSEHOLDS):
         join_date = START_DATE + timedelta(days=random.randint(0, (END_DATE - START_DATE).days))
         join_date_str = join_date.strftime('%Y-%m-%d')
-        
         district = random.choices(districts, weights=weights)[0]
         
-        # Перевірка активних кампаній для цього дня та району
-        active_campaigns = [m for m in marketing_events if m[2] <= join_date_str <= m[3] and (m[5] == 'Island Wide' or m[5] == district)]
-        
+        # Churn Logic (fixed)
+        status = 'Active'
+        churn_date = None
+        if random.random() < (0.18 if district == 'PO36' else 0.12): # Базовий відтік
+            c_date = join_date + timedelta(days=random.randint(90, 600))
+            if c_date < END_DATE:
+                status = 'Churned'
+                churn_date = c_date.strftime('%Y-%m-%d')
+
         source = 'Organic'
-        if active_campaigns:
-            # Чим більше кампаній, тим вищий шанс не-органічного входу
-            if random.random() < 0.6: # 60% шанс, що маркетинг спрацював, якщо він був
-                source = random.choice(active_campaigns)[0]
+        active_campaigns = [m for m in marketing_events if m[2] <= join_date_str <= m[3] and (m[5] == 'Island Wide' or m[5] == district)]
+        if active_campaigns and random.random() < 0.6:
+            source = random.choice(active_campaigns)[0]
 
         pc_list = [pc for pc in infra_data.keys() if pc.startswith(district)]
         pc = random.choice(pc_list) if pc_list else generate_random_postcode(district)
         
-        name = f"{random.choice(['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer'])} {random.choice(['Smith', 'Jones', 'Taylor', 'Brown'])}"
-        address = f"{random.randint(1, 100)} {random.choice(['High St', 'Main Rd', 'Station Rd', 'Queens Rd'])}"
-        
-        cust_data.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date_str, 'Active', source))
+        name = f"{random.choice(['James', 'Mary', 'John', 'Patricia'])} {random.choice(['Smith', 'Jones', 'Taylor'])}"
+        cust_data.append((name, 'Street Addr', POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
         
         plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
         sub_data.append((i+1, plan['name'], plan['rate'], join_date_str, 1))
 
-        # Upsell Logic
-        if random.random() < 0.2: # 20% клієнтів змінюють план (частіше завдяки маркетингу)
-            upgrade_date = join_date + timedelta(days=random.randint(60, 500))
-            if upgrade_date < END_DATE:
-                up_date_str = upgrade_date.strftime('%Y-%m-%d')
-                up_campaigns = [m for m in marketing_events if m[2] <= up_date_str <= m[3] and (m[5] == 'Island Wide' or m[5] == district)]
-                
-                if up_campaigns: # Якщо була акція, апгрейд імовірніший
-                    new_plan = random.choice(PLANS[PLANS.index(plan)+1:] if PLANS.index(plan) < len(PLANS)-1 else [plan])
-                    if new_plan != plan:
-                        sub_data[-1] = (i+1, plan['name'], plan['rate'], join_date_str, 0)
-                        sub_data.append((i+1, new_plan['name'], new_plan['rate'], up_date_str, 1))
-
-    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source) VALUES (?,?,?,?,?,?,?)', cust_data)
+    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', cust_data)
     cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_data)
 
     # 4. Billing
-    print("Generating billing...")
     billing_records = []
     for i in range(1, TOTAL_HOUSEHOLDS + 1):
-        for m in range(random.randint(1, 15)):
-            date = (END_DATE - timedelta(days=m*30)).strftime('%Y-%m-%d')
-            billing_records.append((i, date, random.choice([31.95, 35.95, 41.95, 48.95]), 'Direct Debit'))
+        # Рахунки тільки до дати відтоку
+        c_status = cust_data[i-1][5]
+        c_churn_date = cust_data[i-1][7]
+        last_bill_date = END_DATE
+        if c_status == 'Churned' and c_churn_date:
+            last_bill_date = datetime.strptime(c_churn_date, '%Y-%m-%d')
+        
+        curr = datetime.strptime(cust_data[i-1][4], '%Y-%m-%d')
+        while curr <= last_bill_date:
+            billing_records.append((i, curr.strftime('%Y-%m-%d'), random.choice([19.95, 30.95, 31.95]), 'Direct Debit'))
+            curr += timedelta(days=30)
             if len(billing_records) > 50000:
                 cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
                 billing_records = []
@@ -208,7 +185,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print(f"Database created with {len(marketing_events)} marketing events!")
+    print("Database fixed: Churn logic and columns restored.")
 
 if __name__ == '__main__':
     create_db()
