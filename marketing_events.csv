@@ -1,0 +1,32 @@
+id,event_type,campaign_name,start_date,end_date,budget,target_area
+1,Facebook Ads,Facebook Ads Campaign Jan 2023,2023-01-01,2023-01-29,1200.0,Island Wide
+2,Leaflets,Leaflets Campaign Feb 2023,2023-02-03,2023-02-26,500.0,PO36
+3,Local Fair,Local Fair Campaign Mar 2023,2023-03-13,2023-04-10,300.0,PO37
+4,Google Search,Google Search Campaign May 2023,2023-05-05,2023-05-22,800.0,Island Wide
+5,Leaflets,Leaflets Campaign May 2023,2023-05-26,2023-06-19,500.0,PO31
+6,Google Search,Google Search Campaign Jul 2023,2023-07-10,2023-07-18,800.0,Island Wide
+7,Local Fair,Local Fair Campaign Sep 2023,2023-09-02,2023-09-13,300.0,PO39
+8,Leaflets,Leaflets Campaign Oct 2023,2023-10-10,2023-10-24,500.0,PO36
+9,Leaflets,Leaflets Campaign Nov 2023,2023-11-15,2023-12-12,500.0,PO33
+10,Radio Ad,Radio Ad Campaign Dec 2023,2023-12-10,2023-12-27,2000.0,Island Wide
+11,Leaflets,Leaflets Campaign Jan 2024,2024-01-21,2024-02-11,500.0,PO40
+12,Facebook Ads,Facebook Ads Campaign Mar 2024,2024-03-06,2024-04-04,1200.0,Island Wide
+13,Local Fair,Local Fair Campaign Apr 2024,2024-04-05,2024-05-04,300.0,PO32
+14,Local Fair,Local Fair Campaign May 2024,2024-05-14,2024-06-10,300.0,PO33
+15,Local Fair,Local Fair Campaign Jul 2024,2024-07-13,2024-08-09,300.0,PO32
+16,Leaflets,Leaflets Campaign Aug 2024,2024-08-06,2024-08-22,500.0,PO33
+17,Leaflets,Leaflets Campaign Oct 2024,2024-10-02,2024-10-17,500.0,PO39
+18,Facebook Ads,Facebook Ads Campaign Oct 2024,2024-10-28,2024-11-26,1200.0,Island Wide
+19,Radio Ad,Radio Ad Campaign Dec 2024,2024-12-12,2024-12-28,2000.0,Island Wide
+20,Facebook Ads,Facebook Ads Campaign Feb 2025,2025-02-09,2025-02-18,1200.0,Island Wide
+21,Radio Ad,Radio Ad Campaign Mar 2025,2025-03-29,2025-04-27,2000.0,Island Wide
+22,Local Fair,Local Fair Campaign May 2025,2025-05-07,2025-06-03,300.0,PO35
+23,Local Fair,Local Fair Campaign Jun 2025,2025-06-30,2025-07-11,300.0,PO38
+24,Google Search,Google Search Campaign Jul 2025,2025-07-27,2025-08-22,800.0,Island Wide
+25,Google Search,Google Search Campaign Aug 2025,2025-08-26,2025-09-16,800.0,Island Wide
+26,Facebook Ads,Facebook Ads Campaign Sep 2025,2025-09-28,2025-10-25,1200.0,Island Wide
+27,Facebook Ads,Facebook Ads Campaign Oct 2025,2025-10-19,2025-11-18,1200.0,Island Wide
+28,Leaflets,Leaflets Campaign Nov 2025,2025-11-14,2025-12-12,500.0,PO39
+29,Facebook Ads,Facebook Ads Campaign Dec 2025,2025-12-27,2026-01-15,1200.0,Island Wide
+30,Leaflets,Leaflets Campaign Feb 2026,2026-02-10,2026-03-03,500.0,PO31
+31,Facebook Ads,Facebook Ads Campaign Apr 2026,2026-04-04,2026-04-15,1200.0,Island Wide
