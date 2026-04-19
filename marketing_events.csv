@@ -1,32 +1,251 @@
 id,event_type,campaign_name,start_date,end_date,budget,target_area
-1,Facebook Ads,Facebook Ads Campaign Jan 2023,2023-01-01,2023-01-29,1200.0,Island Wide
-2,Leaflets,Leaflets Campaign Feb 2023,2023-02-03,2023-02-26,500.0,PO36
-3,Local Fair,Local Fair Campaign Mar 2023,2023-03-13,2023-04-10,300.0,PO37
-4,Google Search,Google Search Campaign May 2023,2023-05-05,2023-05-22,800.0,Island Wide
-5,Leaflets,Leaflets Campaign May 2023,2023-05-26,2023-06-19,500.0,PO31
-6,Google Search,Google Search Campaign Jul 2023,2023-07-10,2023-07-18,800.0,Island Wide
-7,Local Fair,Local Fair Campaign Sep 2023,2023-09-02,2023-09-13,300.0,PO39
-8,Leaflets,Leaflets Campaign Oct 2023,2023-10-10,2023-10-24,500.0,PO36
-9,Leaflets,Leaflets Campaign Nov 2023,2023-11-15,2023-12-12,500.0,PO33
-10,Radio Ad,Radio Ad Campaign Dec 2023,2023-12-10,2023-12-27,2000.0,Island Wide
-11,Leaflets,Leaflets Campaign Jan 2024,2024-01-21,2024-02-11,500.0,PO40
-12,Facebook Ads,Facebook Ads Campaign Mar 2024,2024-03-06,2024-04-04,1200.0,Island Wide
-13,Local Fair,Local Fair Campaign Apr 2024,2024-04-05,2024-05-04,300.0,PO32
-14,Local Fair,Local Fair Campaign May 2024,2024-05-14,2024-06-10,300.0,PO33
-15,Local Fair,Local Fair Campaign Jul 2024,2024-07-13,2024-08-09,300.0,PO32
-16,Leaflets,Leaflets Campaign Aug 2024,2024-08-06,2024-08-22,500.0,PO33
-17,Leaflets,Leaflets Campaign Oct 2024,2024-10-02,2024-10-17,500.0,PO39
-18,Facebook Ads,Facebook Ads Campaign Oct 2024,2024-10-28,2024-11-26,1200.0,Island Wide
-19,Radio Ad,Radio Ad Campaign Dec 2024,2024-12-12,2024-12-28,2000.0,Island Wide
-20,Facebook Ads,Facebook Ads Campaign Feb 2025,2025-02-09,2025-02-18,1200.0,Island Wide
-21,Radio Ad,Radio Ad Campaign Mar 2025,2025-03-29,2025-04-27,2000.0,Island Wide
-22,Local Fair,Local Fair Campaign May 2025,2025-05-07,2025-06-03,300.0,PO35
-23,Local Fair,Local Fair Campaign Jun 2025,2025-06-30,2025-07-11,300.0,PO38
-24,Google Search,Google Search Campaign Jul 2025,2025-07-27,2025-08-22,800.0,Island Wide
-25,Google Search,Google Search Campaign Aug 2025,2025-08-26,2025-09-16,800.0,Island Wide
-26,Facebook Ads,Facebook Ads Campaign Sep 2025,2025-09-28,2025-10-25,1200.0,Island Wide
-27,Facebook Ads,Facebook Ads Campaign Oct 2025,2025-10-19,2025-11-18,1200.0,Island Wide
-28,Leaflets,Leaflets Campaign Nov 2025,2025-11-14,2025-12-12,500.0,PO39
-29,Facebook Ads,Facebook Ads Campaign Dec 2025,2025-12-27,2026-01-15,1200.0,Island Wide
-30,Leaflets,Leaflets Campaign Feb 2026,2026-02-10,2026-03-03,500.0,PO31
-31,Facebook Ads,Facebook Ads Campaign Apr 2026,2026-04-04,2026-04-15,1200.0,Island Wide
+1,Local Fair,Local Fair Drive Jan 2023,2023-01-01,2023-01-05,431.0,PO35
+2,Sponsorship,Sponsorship Drive Jan 2023,2023-01-06,2023-01-24,1386.0,PO40
+3,Instagram Influencer,Instagram Influencer Promo Jan 2023,2023-01-08,2023-01-19,949.0,Island Wide
+4,Radio Ad,Radio Ad Blast Jan 2023,2023-01-10,2023-01-16,2480.0,Island Wide
+5,Facebook Ads,Facebook Ads Drive Jan 2023,2023-01-14,2023-01-25,1447.0,Island Wide
+6,Google Search,Google Search Blast Jan 2023,2023-01-16,2023-02-03,1083.0,Island Wide
+7,Google Search,Google Search Blast Jan 2023,2023-01-26,2023-02-14,953.0,Island Wide
+8,Google Search,Google Search Sale Feb 2023,2023-02-01,2023-02-21,1145.0,Island Wide
+9,Sponsorship,Sponsorship Special Feb 2023,2023-02-02,2023-02-09,1022.0,PO41
+10,Door-to-Door,Door-to-Door Drive Feb 2023,2023-02-05,2023-02-08,1091.0,PO30
+11,Radio Ad,Radio Ad Drive Feb 2023,2023-02-05,2023-02-14,2075.0,Island Wide
+12,Facebook Ads,Facebook Ads Sale Feb 2023,2023-02-12,2023-02-16,1501.0,Island Wide
+13,Sponsorship,Sponsorship Blast Feb 2023,2023-02-14,2023-02-23,1153.0,PO41
+14,Billboards,Billboards Drive Feb 2023,2023-02-15,2023-02-20,1569.0,Island Wide
+15,Door-to-Door,Door-to-Door Promo Feb 2023,2023-02-17,2023-03-09,543.0,PO32
+16,Google Search,Google Search Promo Mar 2023,2023-03-06,2023-03-14,1021.0,Island Wide
+17,Billboards,Billboards Sale Mar 2023,2023-03-11,2023-03-25,1974.0,Island Wide
+18,Facebook Ads,Facebook Ads Special Mar 2023,2023-03-13,2023-04-01,1385.0,Island Wide
+19,Leaflets,Leaflets Special Mar 2023,2023-03-17,2023-03-26,680.0,PO33
+20,Radio Ad,Radio Ad Sale Mar 2023,2023-03-17,2023-03-25,2300.0,Island Wide
+21,Google Search,Google Search Promo Mar 2023,2023-03-27,2023-03-31,864.0,Island Wide
+22,Door-to-Door,Door-to-Door Sale Mar 2023,2023-03-30,2023-04-04,524.0,PO39
+23,Radio Ad,Radio Ad Blast Apr 2023,2023-04-13,2023-04-30,2388.0,Island Wide
+24,Local Fair,Local Fair Special Apr 2023,2023-04-17,2023-04-20,240.0,PO35
+25,Leaflets,Leaflets Drive Apr 2023,2023-04-27,2023-05-15,630.0,PO30
+26,Local Fair,Local Fair Special May 2023,2023-05-01,2023-05-21,534.0,PO35
+27,Door-to-Door,Door-to-Door Drive May 2023,2023-05-10,2023-05-26,766.0,PO31
+28,Facebook Ads,Facebook Ads Drive May 2023,2023-05-13,2023-05-17,1343.0,Island Wide
+29,Sponsorship,Sponsorship Promo May 2023,2023-05-18,2023-05-21,1408.0,PO34
+30,Billboards,Billboards Blast May 2023,2023-05-21,2023-06-01,1465.0,Island Wide
+31,Sponsorship,Sponsorship Special Jun 2023,2023-06-09,2023-06-14,1079.0,PO34
+32,Door-to-Door,Door-to-Door Blast Jun 2023,2023-06-12,2023-07-01,865.0,PO35
+33,Door-to-Door,Door-to-Door Sale Jun 2023,2023-06-12,2023-06-29,723.0,PO39
+34,Billboards,Billboards Blast Jun 2023,2023-06-21,2023-07-02,1603.0,Island Wide
+35,Leaflets,Leaflets Promo Jun 2023,2023-06-22,2023-06-27,607.0,PO30
+36,Facebook Ads,Facebook Ads Drive Jun 2023,2023-06-25,2023-07-15,1668.0,Island Wide
+37,Instagram Influencer,Instagram Influencer Promo Jul 2023,2023-07-09,2023-07-17,1216.0,Island Wide
+38,Door-to-Door,Door-to-Door Sale Jul 2023,2023-07-11,2023-08-01,934.0,PO41
+39,Google Search,Google Search Drive Jul 2023,2023-07-13,2023-08-03,812.0,Island Wide
+40,Google Search,Google Search Special Jul 2023,2023-07-19,2023-07-23,908.0,Island Wide
+41,Leaflets,Leaflets Drive Jul 2023,2023-07-21,2023-08-08,831.0,PO33
+42,Google Search,Google Search Special Jul 2023,2023-07-23,2023-08-03,818.0,Island Wide
+43,Sponsorship,Sponsorship Sale Jul 2023,2023-07-26,2023-08-09,1468.0,PO35
+44,Sponsorship,Sponsorship Drive Jul 2023,2023-07-27,2023-07-31,1338.0,PO32
+45,Facebook Ads,Facebook Ads Blast Aug 2023,2023-08-01,2023-08-06,1427.0,Island Wide
+46,Google Search,Google Search Drive Aug 2023,2023-08-17,2023-09-01,725.0,Island Wide
+47,Google Search,Google Search Sale Aug 2023,2023-08-21,2023-09-06,953.0,Island Wide
+48,Sponsorship,Sponsorship Drive Aug 2023,2023-08-22,2023-09-04,1318.0,PO40
+49,Google Search,Google Search Sale Aug 2023,2023-08-23,2023-09-05,898.0,Island Wide
+50,Billboards,Billboards Special Aug 2023,2023-08-24,2023-09-01,1953.0,Island Wide
+51,Billboards,Billboards Special Sep 2023,2023-09-09,2023-09-27,1747.0,Island Wide
+52,Instagram Influencer,Instagram Influencer Promo Sep 2023,2023-09-13,2023-09-24,1384.0,Island Wide
+53,Door-to-Door,Door-to-Door Special Sep 2023,2023-09-14,2023-09-23,538.0,PO33
+54,Billboards,Billboards Special Sep 2023,2023-09-28,2023-10-09,1711.0,Island Wide
+55,Radio Ad,Radio Ad Sale Sep 2023,2023-09-29,2023-10-13,2203.0,Island Wide
+56,Instagram Influencer,Instagram Influencer Blast Oct 2023,2023-10-07,2023-10-15,845.0,Island Wide
+57,Billboards,Billboards Promo Oct 2023,2023-10-20,2023-11-10,1733.0,Island Wide
+58,Radio Ad,Radio Ad Special Oct 2023,2023-10-23,2023-11-08,1934.0,Island Wide
+59,Instagram Influencer,Instagram Influencer Blast Oct 2023,2023-10-26,2023-11-10,930.0,Island Wide
+60,Sponsorship,Sponsorship Special Oct 2023,2023-10-26,2023-11-01,1136.0,PO36
+61,Sponsorship,Sponsorship Promo Nov 2023,2023-11-03,2023-11-14,1174.0,PO40
+62,Google Search,Google Search Blast Nov 2023,2023-11-08,2023-11-19,1146.0,Island Wide
+63,Local Fair,Local Fair Promo Nov 2023,2023-11-13,2023-11-30,394.0,PO36
+64,Sponsorship,Sponsorship Special Nov 2023,2023-11-16,2023-12-06,1164.0,PO35
+65,Instagram Influencer,Instagram Influencer Drive Nov 2023,2023-11-18,2023-12-01,802.0,Island Wide
+66,Google Search,Google Search Promo Nov 2023,2023-11-18,2023-12-01,775.0,Island Wide
+67,Facebook Ads,Facebook Ads Blast Nov 2023,2023-11-18,2023-11-28,1104.0,Island Wide
+68,Door-to-Door,Door-to-Door Sale Nov 2023,2023-11-25,2023-12-03,833.0,PO31
+69,Leaflets,Leaflets Sale Nov 2023,2023-11-25,2023-12-13,753.0,PO33
+70,Instagram Influencer,Instagram Influencer Special Nov 2023,2023-11-26,2023-12-17,1095.0,Island Wide
+71,Leaflets,Leaflets Promo Nov 2023,2023-11-28,2023-12-03,716.0,PO32
+72,Local Fair,Local Fair Sale Dec 2023,2023-12-04,2023-12-18,502.0,PO33
+73,Radio Ad,Radio Ad Special Dec 2023,2023-12-08,2023-12-28,2121.0,Island Wide
+74,Radio Ad,Radio Ad Drive Dec 2023,2023-12-10,2023-12-21,2485.0,Island Wide
+75,Door-to-Door,Door-to-Door Promo Dec 2023,2023-12-19,2023-12-22,880.0,PO37
+76,Instagram Influencer,Instagram Influencer Drive Dec 2023,2023-12-20,2024-01-09,1382.0,Island Wide
+77,Billboards,Billboards Blast Dec 2023,2023-12-25,2024-01-07,1715.0,Island Wide
+78,Leaflets,Leaflets Drive Jan 2024,2024-01-02,2024-01-08,426.0,PO35
+79,Door-to-Door,Door-to-Door Special Jan 2024,2024-01-14,2024-01-21,763.0,PO41
+80,Local Fair,Local Fair Blast Jan 2024,2024-01-22,2024-01-26,741.0,PO34
+81,Door-to-Door,Door-to-Door Sale Jan 2024,2024-01-28,2024-02-15,916.0,PO34
+82,Leaflets,Leaflets Promo Feb 2024,2024-02-09,2024-02-16,833.0,PO33
+83,Local Fair,Local Fair Sale Feb 2024,2024-02-17,2024-02-29,381.0,PO34
+84,Instagram Influencer,Instagram Influencer Special Feb 2024,2024-02-17,2024-03-04,1309.0,Island Wide
+85,Local Fair,Local Fair Drive Feb 2024,2024-02-19,2024-03-09,237.0,PO41
+86,Google Search,Google Search Promo Feb 2024,2024-02-28,2024-03-13,991.0,Island Wide
+87,Leaflets,Leaflets Drive Mar 2024,2024-03-08,2024-03-15,956.0,PO33
+88,Instagram Influencer,Instagram Influencer Special Mar 2024,2024-03-10,2024-03-21,1051.0,Island Wide
+89,Leaflets,Leaflets Sale Mar 2024,2024-03-17,2024-03-29,617.0,PO41
+90,Facebook Ads,Facebook Ads Sale Mar 2024,2024-03-26,2024-04-10,1424.0,Island Wide
+91,Facebook Ads,Facebook Ads Blast Mar 2024,2024-03-31,2024-04-03,1157.0,Island Wide
+92,Door-to-Door,Door-to-Door Blast Apr 2024,2024-04-08,2024-04-19,1075.0,PO34
+93,Billboards,Billboards Drive Apr 2024,2024-04-10,2024-04-29,1412.0,Island Wide
+94,Leaflets,Leaflets Special Apr 2024,2024-04-16,2024-04-27,966.0,PO33
+95,Instagram Influencer,Instagram Influencer Special Apr 2024,2024-04-20,2024-05-11,971.0,Island Wide
+96,Sponsorship,Sponsorship Blast Apr 2024,2024-04-20,2024-05-09,1216.0,PO38
+97,Instagram Influencer,Instagram Influencer Drive May 2024,2024-05-11,2024-05-25,807.0,Island Wide
+98,Local Fair,Local Fair Promo May 2024,2024-05-14,2024-05-24,422.0,PO33
+99,Instagram Influencer,Instagram Influencer Sale May 2024,2024-05-15,2024-05-21,1320.0,Island Wide
+100,Google Search,Google Search Drive May 2024,2024-05-19,2024-05-29,1110.0,Island Wide
+101,Leaflets,Leaflets Special May 2024,2024-05-19,2024-06-02,915.0,PO33
+102,Sponsorship,Sponsorship Special May 2024,2024-05-22,2024-05-27,1055.0,PO41
+103,Instagram Influencer,Instagram Influencer Drive May 2024,2024-05-27,2024-06-14,881.0,Island Wide
+104,Sponsorship,Sponsorship Drive May 2024,2024-05-31,2024-06-05,1319.0,PO41
+105,Radio Ad,Radio Ad Drive Jun 2024,2024-06-04,2024-06-25,2011.0,Island Wide
+106,Leaflets,Leaflets Drive Jun 2024,2024-06-04,2024-06-13,628.0,PO36
+107,Radio Ad,Radio Ad Sale Jun 2024,2024-06-06,2024-06-21,2008.0,Island Wide
+108,Facebook Ads,Facebook Ads Promo Jun 2024,2024-06-10,2024-06-27,1355.0,Island Wide
+109,Facebook Ads,Facebook Ads Sale Jun 2024,2024-06-12,2024-06-16,1678.0,Island Wide
+110,Door-to-Door,Door-to-Door Promo Jun 2024,2024-06-13,2024-06-26,870.0,PO35
+111,Leaflets,Leaflets Promo Jun 2024,2024-06-14,2024-06-20,438.0,PO35
+112,Instagram Influencer,Instagram Influencer Blast Jun 2024,2024-06-18,2024-06-25,1151.0,Island Wide
+113,Instagram Influencer,Instagram Influencer Drive Jun 2024,2024-06-19,2024-06-24,1111.0,Island Wide
+114,Google Search,Google Search Sale Jun 2024,2024-06-24,2024-07-05,1226.0,Island Wide
+115,Local Fair,Local Fair Drive Jun 2024,2024-06-26,2024-07-02,729.0,PO41
+116,Sponsorship,Sponsorship Blast Jun 2024,2024-06-28,2024-07-03,1091.0,PO36
+117,Local Fair,Local Fair Blast Jun 2024,2024-06-28,2024-07-12,794.0,PO32
+118,Door-to-Door,Door-to-Door Drive Jul 2024,2024-07-09,2024-07-19,1062.0,PO38
+119,Facebook Ads,Facebook Ads Blast Jul 2024,2024-07-10,2024-07-26,1283.0,Island Wide
+120,Radio Ad,Radio Ad Promo Jul 2024,2024-07-15,2024-07-21,1987.0,Island Wide
+121,Facebook Ads,Facebook Ads Promo Jul 2024,2024-07-16,2024-07-21,1437.0,Island Wide
+122,Leaflets,Leaflets Sale Jul 2024,2024-07-17,2024-07-31,445.0,PO33
+123,Leaflets,Leaflets Special Jul 2024,2024-07-18,2024-07-29,842.0,PO40
+124,Billboards,Billboards Promo Jul 2024,2024-07-25,2024-08-05,1480.0,Island Wide
+125,Sponsorship,Sponsorship Drive Jul 2024,2024-07-28,2024-08-09,1120.0,PO30
+126,Billboards,Billboards Promo Jul 2024,2024-07-28,2024-08-11,1826.0,Island Wide
+127,Leaflets,Leaflets Promo Jul 2024,2024-07-30,2024-08-06,431.0,PO31
+128,Sponsorship,Sponsorship Blast Jul 2024,2024-07-31,2024-08-16,989.0,PO30
+129,Radio Ad,Radio Ad Sale Aug 2024,2024-08-02,2024-08-21,2188.0,Island Wide
+130,Sponsorship,Sponsorship Sale Aug 2024,2024-08-13,2024-08-18,1010.0,PO41
+131,Google Search,Google Search Promo Aug 2024,2024-08-15,2024-09-03,875.0,Island Wide
+132,Sponsorship,Sponsorship Drive Aug 2024,2024-08-20,2024-09-01,1067.0,PO36
+133,Facebook Ads,Facebook Ads Drive Aug 2024,2024-08-27,2024-09-05,1529.0,Island Wide
+134,Local Fair,Local Fair Special Sep 2024,2024-09-01,2024-09-15,754.0,PO40
+135,Radio Ad,Radio Ad Drive Sep 2024,2024-09-06,2024-09-18,1968.0,Island Wide
+136,Instagram Influencer,Instagram Influencer Promo Sep 2024,2024-09-19,2024-09-27,1115.0,Island Wide
+137,Facebook Ads,Facebook Ads Sale Sep 2024,2024-09-21,2024-10-04,1160.0,Island Wide
+138,Facebook Ads,Facebook Ads Special Sep 2024,2024-09-26,2024-10-07,1427.0,Island Wide
+139,Facebook Ads,Facebook Ads Sale Sep 2024,2024-09-28,2024-10-03,1521.0,Island Wide
+140,Facebook Ads,Facebook Ads Sale Sep 2024,2024-09-29,2024-10-02,1650.0,Island Wide
+141,Facebook Ads,Facebook Ads Promo Oct 2024,2024-10-09,2024-10-30,1250.0,Island Wide
+142,Leaflets,Leaflets Promo Oct 2024,2024-10-15,2024-10-25,760.0,PO39
+143,Instagram Influencer,Instagram Influencer Sale Oct 2024,2024-10-20,2024-10-29,1017.0,Island Wide
+144,Local Fair,Local Fair Blast Oct 2024,2024-10-28,2024-11-10,492.0,PO35
+145,Billboards,Billboards Promo Oct 2024,2024-10-31,2024-11-06,1587.0,Island Wide
+146,Radio Ad,Radio Ad Sale Nov 2024,2024-11-02,2024-11-18,2325.0,Island Wide
+147,Google Search,Google Search Blast Nov 2024,2024-11-03,2024-11-20,1178.0,Island Wide
+148,Instagram Influencer,Instagram Influencer Blast Nov 2024,2024-11-18,2024-12-09,1345.0,Island Wide
+149,Door-to-Door,Door-to-Door Drive Dec 2024,2024-12-05,2024-12-13,1039.0,PO38
+150,Facebook Ads,Facebook Ads Blast Dec 2024,2024-12-09,2024-12-18,1656.0,Island Wide
+151,Radio Ad,Radio Ad Blast Dec 2024,2024-12-22,2025-01-03,1987.0,Island Wide
+152,Radio Ad,Radio Ad Promo Dec 2024,2024-12-25,2025-01-10,1925.0,Island Wide
+153,Sponsorship,Sponsorship Sale Dec 2024,2024-12-30,2025-01-09,994.0,PO34
+154,Google Search,Google Search Blast Dec 2024,2024-12-31,2025-01-06,727.0,Island Wide
+155,Facebook Ads,Facebook Ads Blast Jan 2025,2025-01-13,2025-01-28,1168.0,Island Wide
+156,Sponsorship,Sponsorship Blast Jan 2025,2025-01-23,2025-02-10,1272.0,PO30
+157,Billboards,Billboards Promo Jan 2025,2025-01-26,2025-02-09,1951.0,Island Wide
+158,Radio Ad,Radio Ad Special Jan 2025,2025-01-29,2025-02-19,2343.0,Island Wide
+159,Facebook Ads,Facebook Ads Special Jan 2025,2025-01-31,2025-02-17,1456.0,Island Wide
+160,Instagram Influencer,Instagram Influencer Sale Feb 2025,2025-02-01,2025-02-08,1376.0,Island Wide
+161,Instagram Influencer,Instagram Influencer Drive Feb 2025,2025-02-10,2025-02-25,1117.0,Island Wide
+162,Sponsorship,Sponsorship Blast Feb 2025,2025-02-16,2025-03-09,1450.0,PO35
+163,Leaflets,Leaflets Special Mar 2025,2025-03-02,2025-03-14,554.0,PO33
+164,Billboards,Billboards Promo Mar 2025,2025-03-03,2025-03-15,1545.0,Island Wide
+165,Radio Ad,Radio Ad Promo Mar 2025,2025-03-05,2025-03-22,2122.0,Island Wide
+166,Instagram Influencer,Instagram Influencer Blast Mar 2025,2025-03-06,2025-03-13,978.0,Island Wide
+167,Instagram Influencer,Instagram Influencer Blast Mar 2025,2025-03-13,2025-03-26,1367.0,Island Wide
+168,Local Fair,Local Fair Sale Mar 2025,2025-03-22,2025-03-30,559.0,PO40
+169,Radio Ad,Radio Ad Special Mar 2025,2025-03-23,2025-04-09,2460.0,Island Wide
+170,Leaflets,Leaflets Special Mar 2025,2025-03-30,2025-04-10,666.0,PO39
+171,Sponsorship,Sponsorship Special Mar 2025,2025-03-30,2025-04-02,1356.0,PO38
+172,Door-to-Door,Door-to-Door Promo Apr 2025,2025-04-05,2025-04-08,843.0,PO41
+173,Sponsorship,Sponsorship Blast Apr 2025,2025-04-07,2025-04-17,1318.0,PO38
+174,Leaflets,Leaflets Sale Apr 2025,2025-04-11,2025-04-18,452.0,PO37
+175,Local Fair,Local Fair Sale Apr 2025,2025-04-16,2025-04-20,398.0,PO32
+176,Local Fair,Local Fair Blast Apr 2025,2025-04-19,2025-05-07,342.0,PO32
+177,Radio Ad,Radio Ad Sale Apr 2025,2025-04-23,2025-04-26,2140.0,Island Wide
+178,Billboards,Billboards Promo Apr 2025,2025-04-30,2025-05-03,1856.0,Island Wide
+179,Billboards,Billboards Special May 2025,2025-05-01,2025-05-06,1676.0,Island Wide
+180,Sponsorship,Sponsorship Drive May 2025,2025-05-03,2025-05-17,1199.0,PO39
+181,Door-to-Door,Door-to-Door Drive May 2025,2025-05-24,2025-06-10,863.0,PO31
+182,Sponsorship,Sponsorship Promo May 2025,2025-05-28,2025-06-03,1042.0,PO41
+183,Door-to-Door,Door-to-Door Promo May 2025,2025-05-28,2025-06-16,1048.0,PO35
+184,Billboards,Billboards Special May 2025,2025-05-30,2025-06-06,1492.0,Island Wide
+185,Door-to-Door,Door-to-Door Blast Jun 2025,2025-06-05,2025-06-17,748.0,PO31
+186,Local Fair,Local Fair Blast Jun 2025,2025-06-07,2025-06-18,760.0,PO32
+187,Door-to-Door,Door-to-Door Special Jun 2025,2025-06-15,2025-07-03,615.0,PO36
+188,Sponsorship,Sponsorship Blast Jun 2025,2025-06-21,2025-07-06,1460.0,PO39
+189,Instagram Influencer,Instagram Influencer Special Jun 2025,2025-06-22,2025-07-10,993.0,Island Wide
+190,Facebook Ads,Facebook Ads Sale Jun 2025,2025-06-30,2025-07-09,1448.0,Island Wide
+191,Billboards,Billboards Promo Jul 2025,2025-07-08,2025-07-26,1648.0,Island Wide
+192,Instagram Influencer,Instagram Influencer Blast Jul 2025,2025-07-08,2025-07-28,904.0,Island Wide
+193,Door-to-Door,Door-to-Door Blast Jul 2025,2025-07-18,2025-08-01,1075.0,PO37
+194,Door-to-Door,Door-to-Door Blast Jul 2025,2025-07-19,2025-08-02,803.0,PO33
+195,Billboards,Billboards Blast Jul 2025,2025-07-20,2025-07-27,1665.0,Island Wide
+196,Instagram Influencer,Instagram Influencer Drive Jul 2025,2025-07-21,2025-08-04,1027.0,Island Wide
+197,Door-to-Door,Door-to-Door Special Jul 2025,2025-07-22,2025-07-29,1033.0,PO32
+198,Door-to-Door,Door-to-Door Promo Aug 2025,2025-08-03,2025-08-22,562.0,PO34
+199,Instagram Influencer,Instagram Influencer Special Aug 2025,2025-08-05,2025-08-10,836.0,Island Wide
+200,Google Search,Google Search Drive Aug 2025,2025-08-06,2025-08-22,992.0,Island Wide
+201,Sponsorship,Sponsorship Special Aug 2025,2025-08-14,2025-08-20,1094.0,PO34
+202,Radio Ad,Radio Ad Blast Aug 2025,2025-08-19,2025-08-26,1932.0,Island Wide
+203,Local Fair,Local Fair Special Aug 2025,2025-08-26,2025-09-14,278.0,PO36
+204,Local Fair,Local Fair Special Aug 2025,2025-08-28,2025-09-06,265.0,PO38
+205,Billboards,Billboards Drive Sep 2025,2025-09-01,2025-09-21,1895.0,Island Wide
+206,Facebook Ads,Facebook Ads Special Sep 2025,2025-09-15,2025-09-29,1196.0,Island Wide
+207,Billboards,Billboards Sale Sep 2025,2025-09-28,2025-10-09,1629.0,Island Wide
+208,Facebook Ads,Facebook Ads Blast Oct 2025,2025-10-01,2025-10-06,1136.0,Island Wide
+209,Instagram Influencer,Instagram Influencer Special Oct 2025,2025-10-02,2025-10-09,904.0,Island Wide
+210,Google Search,Google Search Promo Oct 2025,2025-10-04,2025-10-23,733.0,Island Wide
+211,Door-to-Door,Door-to-Door Special Oct 2025,2025-10-08,2025-10-23,798.0,PO40
+212,Facebook Ads,Facebook Ads Drive Oct 2025,2025-10-14,2025-10-18,1177.0,Island Wide
+213,Sponsorship,Sponsorship Blast Oct 2025,2025-10-17,2025-11-04,1453.0,PO32
+214,Leaflets,Leaflets Promo Oct 2025,2025-10-19,2025-11-01,771.0,PO35
+215,Leaflets,Leaflets Sale Oct 2025,2025-10-28,2025-11-08,461.0,PO34
+216,Radio Ad,Radio Ad Sale Nov 2025,2025-11-02,2025-11-13,1979.0,Island Wide
+217,Door-to-Door,Door-to-Door Blast Nov 2025,2025-11-14,2025-12-04,983.0,PO34
+218,Local Fair,Local Fair Sale Nov 2025,2025-11-24,2025-12-04,310.0,PO41
+219,Billboards,Billboards Drive Nov 2025,2025-11-29,2025-12-05,1704.0,Island Wide
+220,Radio Ad,Radio Ad Drive Dec 2025,2025-12-12,2025-12-31,2186.0,Island Wide
+221,Facebook Ads,Facebook Ads Special Dec 2025,2025-12-13,2026-01-01,1346.0,Island Wide
+222,Sponsorship,Sponsorship Special Dec 2025,2025-12-19,2025-12-24,1408.0,PO41
+223,Leaflets,Leaflets Sale Dec 2025,2025-12-20,2025-12-30,786.0,PO40
+224,Door-to-Door,Door-to-Door Promo Jan 2026,2026-01-01,2026-01-08,637.0,PO38
+225,Radio Ad,Radio Ad Sale Jan 2026,2026-01-03,2026-01-24,2130.0,Island Wide
+226,Instagram Influencer,Instagram Influencer Drive Jan 2026,2026-01-04,2026-01-14,807.0,Island Wide
+227,Local Fair,Local Fair Drive Jan 2026,2026-01-07,2026-01-12,768.0,PO34
+228,Google Search,Google Search Blast Jan 2026,2026-01-09,2026-01-21,750.0,Island Wide
+229,Google Search,Google Search Special Jan 2026,2026-01-13,2026-02-03,1031.0,Island Wide
+230,Leaflets,Leaflets Special Jan 2026,2026-01-20,2026-01-29,882.0,PO39
+231,Billboards,Billboards Promo Jan 2026,2026-01-30,2026-02-05,1612.0,Island Wide
+232,Leaflets,Leaflets Special Feb 2026,2026-02-08,2026-02-14,902.0,PO36
+233,Google Search,Google Search Blast Feb 2026,2026-02-12,2026-03-04,1063.0,Island Wide
+234,Google Search,Google Search Sale Feb 2026,2026-02-14,2026-03-01,959.0,Island Wide
+235,Billboards,Billboards Drive Feb 2026,2026-02-17,2026-02-27,1579.0,Island Wide
+236,Billboards,Billboards Special Feb 2026,2026-02-18,2026-02-25,1996.0,Island Wide
+237,Door-to-Door,Door-to-Door Drive Feb 2026,2026-02-26,2026-03-11,576.0,PO37
+238,Leaflets,Leaflets Drive Feb 2026,2026-02-27,2026-03-16,877.0,PO35
+239,Facebook Ads,Facebook Ads Special Mar 2026,2026-03-02,2026-03-05,1665.0,Island Wide
+240,Local Fair,Local Fair Sale Mar 2026,2026-03-06,2026-03-25,296.0,PO35
+241,Door-to-Door,Door-to-Door Drive Mar 2026,2026-03-09,2026-03-22,763.0,PO36
+242,Sponsorship,Sponsorship Sale Mar 2026,2026-03-12,2026-03-23,1421.0,PO34
+243,Local Fair,Local Fair Special Mar 2026,2026-03-16,2026-03-20,306.0,PO32
+244,Facebook Ads,Facebook Ads Promo Mar 2026,2026-03-17,2026-03-31,1624.0,Island Wide
+245,Billboards,Billboards Blast Mar 2026,2026-03-18,2026-03-22,1787.0,Island Wide
+246,Sponsorship,Sponsorship Drive Mar 2026,2026-03-21,2026-04-08,967.0,PO36
+247,Radio Ad,Radio Ad Blast Mar 2026,2026-03-22,2026-04-01,2134.0,Island Wide
+248,Leaflets,Leaflets Blast Mar 2026,2026-03-30,2026-04-12,983.0,PO39
+249,Billboards,Billboards Special Apr 2026,2026-04-05,2026-04-11,1723.0,Island Wide
+250,Radio Ad,Radio Ad Drive Apr 2026,2026-04-10,2026-04-17,2373.0,Island Wide
