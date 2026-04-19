@@ -3,151 +3,200 @@ import random
 import string
 from datetime import datetime, timedelta
 
-# Налаштування бази даних
+# Налаштування
 DB_NAME = 'islandlink_analysis.db'
-TOTAL_HOUSEHOLDS = 28000
-DUPLICATES_COUNT = 400
+TOTAL_HOUSEHOLDS = 30000 # Трохи збільшимо
+START_DATE = datetime(2023, 1, 1)
+END_DATE = datetime(2026, 4, 19)
 
-# Тарифи
 PLANS = [
-    {'name': 'Essential 100', 'rate': 19.95, 'weight': 10},
-    {'name': 'Full-Fibre 150', 'rate': 30.95, 'weight': 15},
-    {'name': 'Full-Fibre 300', 'rate': 31.95, 'weight': 40},
+    {'name': 'Essential 100', 'rate': 19.95, 'weight': 15},
+    {'name': 'Full-Fibre 150', 'rate': 30.95, 'weight': 20},
+    {'name': 'Full-Fibre 300', 'rate': 31.95, 'weight': 35},
     {'name': 'Full-Fibre 500', 'rate': 35.95, 'weight': 15},
     {'name': 'Full-Fibre 900', 'rate': 41.95, 'weight': 10},
-    {'name': 'Full-Fibre 900 - All In', 'rate': 48.95, 'weight': 10}
+    {'name': 'Full-Fibre 900 - All In', 'rate': 48.95, 'weight': 5}
 ]
 
-# Географія
 POSTCODES_CONFIG = {
     'PO30': {'town': 'Newport', 'weight': 25, 'coverage': 0.90},
-    'PO33': {'town': 'Ryde', 'weight': 20, 'coverage': 0.92},
-    'PO36': {'town': 'Sandown', 'weight': 10, 'coverage': 0.85},
-    'PO35': {'town': 'Bembridge', 'weight': 5, 'wealthy': True, 'coverage': 0.95},
-    'PO31': {'town': 'Cowes', 'weight': 10, 'wealthy': True, 'coverage': 0.98}, # Максимальне покриття
-    'PO40': {'town': 'Freshwater', 'weight': 2, 'coverage': 0.70},
-    'PO38': {'town': 'Ventnor', 'weight': 2, 'coverage': 0.75},
+    'PO31': {'town': 'Cowes', 'weight': 12, 'wealthy': True, 'coverage': 0.98},
     'PO32': {'town': 'East Cowes', 'weight': 8, 'coverage': 0.90},
+    'PO33': {'town': 'Ryde', 'weight': 20, 'coverage': 0.92},
     'PO34': {'town': 'Seaview', 'weight': 4, 'coverage': 0.95},
+    'PO35': {'town': 'Bembridge', 'weight': 5, 'wealthy': True, 'coverage': 0.95},
+    'PO36': {'town': 'Sandown', 'weight': 10, 'coverage': 0.85},
     'PO37': {'town': 'Shanklin', 'weight': 8, 'coverage': 0.88},
-    'PO39': {'town': 'Totland Bay', 'weight': 3, 'coverage': 0.70},
-    'PO41': {'town': 'Yarmouth', 'weight': 3, 'coverage': 0.75}
+    'PO38': {'town': 'Ventnor', 'weight': 4, 'coverage': 0.75},
+    'PO39': {'town': 'Totland Bay', 'weight': 2, 'coverage': 0.70},
+    'PO40': {'town': 'Freshwater', 'weight': 2, 'coverage': 0.70},
+    'PO41': {'town': 'Yarmouth', 'weight': 1, 'coverage': 0.75}
 }
 
-STREETS = ['High St', 'Main Rd', 'Victoria Ave', 'Church Rd', 'Broadway', 'Station Rd', 'Queens Rd', 'Mill Hill Rd', 'Tithe Barn', 'Arctic Rd']
-NAMES = ['Smith', 'Jones', 'Taylor', 'Brown', 'Williams', 'Wilson', 'Johnson', 'Davies', 'Robinson', 'Wright']
-FIRST_NAMES = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth']
+MARKETING_TYPES = [
+    {'type': 'Leaflets', 'impact': 2.5, 'cost': 500, 'scope': 'local'},
+    {'type': 'Facebook Ads', 'impact': 1.8, 'cost': 1200, 'scope': 'island'},
+    {'type': 'Radio Ad', 'impact': 1.4, 'cost': 2000, 'scope': 'island'},
+    {'type': 'Local Fair', 'impact': 3.0, 'cost': 300, 'scope': 'local'},
+    {'type': 'Google Search', 'impact': 1.2, 'cost': 800, 'scope': 'island'}
+]
 
 def generate_random_postcode(district):
-    # Формат: PO31 7AA
     sector = random.randint(1, 9)
     unit = ''.join(random.choices(string.ascii_uppercase, k=2))
     return f"{district} {sector}{unit}"
-
-def get_random_date(start_year=2023):
-    start_date = datetime(start_year, 1, 1)
-    end_date = datetime(2026, 4, 19)
-    days_between = (end_date - start_date).days
-    random_days = random.randint(0, days_between)
-    return start_date + timedelta(days=random_days)
 
 def create_db():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    cursor.execute('DROP TABLE IF EXISTS customers')
-    cursor.execute('DROP TABLE IF EXISTS subscriptions')
-    cursor.execute('DROP TABLE IF EXISTS billing')
-    cursor.execute('DROP TABLE IF EXISTS infrastructure')
+    cursor.executescript('''
+    DROP TABLE IF EXISTS customers;
+    DROP TABLE IF EXISTS subscriptions;
+    DROP TABLE IF EXISTS billing;
+    DROP TABLE IF EXISTS infrastructure;
+    DROP TABLE IF EXISTS marketing_events;
 
-    cursor.execute('CREATE TABLE customers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, street_address TEXT, town TEXT, postcode TEXT, join_date TEXT, status TEXT, churn_date TEXT)')
-    cursor.execute('CREATE TABLE subscriptions (customer_id INTEGER, plan_name TEXT, monthly_rate REAL)')
-    cursor.execute('CREATE TABLE billing (id INTEGER PRIMARY KEY AUTOINCREMENT, customer_id INTEGER, invoice_date TEXT, amount_paid REAL, payment_method TEXT)')
-    cursor.execute('CREATE TABLE infrastructure (postcode TEXT PRIMARY KEY, is_serviceable BOOLEAN)')
+    CREATE TABLE marketing_events (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_type TEXT,
+        campaign_name TEXT,
+        start_date TEXT,
+        end_date TEXT,
+        budget REAL,
+        target_area TEXT
+    );
 
-    print("Generating infrastructure (full postcodes)...")
+    CREATE TABLE customers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        street_address TEXT,
+        town TEXT,
+        postcode TEXT,
+        join_date TEXT,
+        status TEXT,
+        acquisition_source TEXT
+    );
+
+    CREATE TABLE subscriptions (
+        customer_id INTEGER,
+        plan_name TEXT,
+        monthly_rate REAL,
+        start_date TEXT,
+        is_active BOOLEAN
+    );
+
+    CREATE TABLE billing (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        customer_id INTEGER,
+        invoice_date TEXT,
+        amount_paid REAL,
+        payment_method TEXT
+    );
+
+    CREATE TABLE infrastructure (
+        postcode TEXT PRIMARY KEY,
+        is_serviceable BOOLEAN
+    );
+    ''')
+
+    # 1. Marketing Events Generation
+    print("Generating marketing events...")
+    marketing_events = []
+    current_m_date = START_DATE
+    while current_m_date < END_DATE:
+        m_type = random.choice(MARKETING_TYPES)
+        duration = random.randint(7, 30)
+        end_m_date = current_m_date + timedelta(days=duration)
+        area = 'Island Wide' if m_type['scope'] == 'island' else random.choice(list(POSTCODES_CONFIG.keys()))
+        
+        marketing_events.append((
+            m_type['type'], 
+            f"{m_type['type']} Campaign {current_m_date.strftime('%b %Y')}",
+            current_m_date.strftime('%Y-%m-%d'),
+            end_m_date.strftime('%Y-%m-%d'),
+            m_type['cost'],
+            area
+        ))
+        current_m_date += timedelta(days=random.randint(20, 60))
+    
+    cursor.executemany('INSERT INTO marketing_events (event_type, campaign_name, start_date, end_date, budget, target_area) VALUES (?,?,?,?,?,?)', marketing_events)
+
+    # 2. Infrastructure
+    print("Generating infrastructure...")
     infra_data = {}
-    pc_districts = list(POSTCODES_CONFIG.keys())
+    for district in POSTCODES_CONFIG.keys():
+        for _ in range(200): # 200 посткодів на район
+            pc = generate_random_postcode(district)
+            infra_data[pc] = random.random() < POSTCODES_CONFIG[district]['coverage']
     
-    # Генеруємо пул з ~2000 унікальних посткодів для острова
-    for _ in range(2500):
-        district = random.choice(pc_districts)
-        full_pc = generate_random_postcode(district)
-        if full_pc not in infra_data:
-            coverage_chance = POSTCODES_CONFIG[district]['coverage']
-            is_svc = random.random() < coverage_chance
-            infra_data[full_pc] = is_svc
-    
-    infra_list = [(pc, svc) for pc, svc in infra_data.items()]
-    cursor.executemany('INSERT INTO infrastructure VALUES (?, ?)', infra_list)
+    cursor.executemany('INSERT INTO infrastructure VALUES (?, ?)', list(infra_data.items()))
 
-    print(f"Generating {TOTAL_HOUSEHOLDS} customers...")
-    customer_records = []
-    sub_records = []
+    # 3. Customers & Subscriptions
+    print("Generating customers with marketing impact...")
+    cust_data = []
+    sub_data = []
     
-    all_pcs = list(infra_data.keys())
-    # Ваги для вибору району
     districts = list(POSTCODES_CONFIG.keys())
     weights = [POSTCODES_CONFIG[d]['weight'] for d in districts]
 
     for i in range(TOTAL_HOUSEHOLDS):
-        # Вибираємо район згідно з вагою
+        # Визначаємо дату приєднання з урахуванням маркетингу
+        join_date = START_DATE + timedelta(days=random.randint(0, (END_DATE - START_DATE).days))
+        
+        # Перевірка, чи потрапив клієнт під акцію
+        source = 'Organic'
+        active_campaigns = [m for m in marketing_events if m[2] <= join_date.strftime('%Y-%m-%d') <= m[3]]
+        
         district = random.choices(districts, weights=weights)[0]
         
-        # Знаходимо посткоди цього району з нашого пулу
-        district_pcs = [pc for pc in all_pcs if pc.startswith(district)]
-        if not district_pcs: # Якщо раптом пустий (малоімовірно)
-            pc = generate_random_postcode(district)
-            infra_data[pc] = random.random() < POSTCODES_CONFIG[district]['coverage']
-            cursor.execute('INSERT OR IGNORE INTO infrastructure VALUES (?, ?)', (pc, infra_data[pc]))
-        else:
-            pc = random.choice(district_pcs)
+        if active_campaigns:
+            # Якщо є акція, підвищуємо ймовірність приходу саме через неї
+            campaign = random.choice(active_campaigns)
+            if campaign[5] == 'Island Wide' or campaign[5] == district:
+                source = campaign[0]
 
-        town = POSTCODES_CONFIG[district]['town']
-        name = f"{random.choice(FIRST_NAMES)} {random.choice(NAMES)}"
-        address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
-        join_date = get_random_date()
+        pc_list = [pc for pc in infra_data.keys() if pc.startswith(district)]
+        pc = random.choice(pc_list) if pc_list else generate_random_postcode(district)
         
-        status = 'Active'
-        churn_date = None
-        if random.random() < (0.18 if district == 'PO36' else 0.10):
-            status = 'Churned'
-            c_date = join_date + timedelta(days=random.randint(90, 365))
-            if c_date < datetime(2026, 4, 19):
-                churn_date = c_date.strftime('%Y-%m-%d')
-            else:
-                status = 'Active'
-
-        customer_records.append((name, address, town, pc, join_date.strftime('%Y-%m-%d'), status, churn_date))
+        name = f"{random.choice(['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer'])} {random.choice(['Smith', 'Jones', 'Taylor', 'Brown'])}"
+        address = f"{random.randint(1, 100)} {random.choice(['High St', 'Main Rd', 'Station Rd'])}"
         
-        plan_weights = [p['weight'] for p in PLANS]
-        if POSTCODES_CONFIG[district].get('wealthy'):
-            plan_weights = [5, 5, 20, 20, 25, 25]
+        cust_data.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date.strftime('%Y-%m-%d'), 'Active', source))
         
-        selected_plan = random.choices(PLANS, weights=plan_weights)[0]
-        sub_records.append((i+1, selected_plan['name'], selected_plan['rate']))
+        # Початковий план
+        plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
+        sub_data.append((i+1, plan['name'], plan['rate'], join_date.strftime('%Y-%m-%d'), 1))
 
-    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, churn_date) VALUES (?,?,?,?,?,?,?)', customer_records)
-    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?)', sub_records)
+        # Симуляція Upsell (зміна плану внаслідок маркетингу)
+        if random.random() < 0.15: # 15% клієнтів змінюють план
+            upgrade_date = join_date + timedelta(days=random.randint(100, 400))
+            if upgrade_date < END_DATE:
+                # Знаходимо кампанію під час апгрейду
+                up_campaigns = [m for m in marketing_events if m[2] <= upgrade_date.strftime('%Y-%m-%d') <= m[3]]
+                if up_campaigns:
+                    new_plan = random.choice(PLANS[PLANS.index(plan)+1:] if PLANS.index(plan) < len(PLANS)-1 else [plan])
+                    if new_plan != plan:
+                        # Деактивуємо старий, додаємо новий
+                        sub_data[-1] = (i+1, plan['name'], plan['rate'], join_date.strftime('%Y-%m-%d'), 0)
+                        sub_data.append((i+1, new_plan['name'], new_plan['rate'], upgrade_date.strftime('%Y-%m-%d'), 1))
 
+    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source) VALUES (?,?,?,?,?,?,?)', cust_data)
+    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_data)
+
+    # 4. Billing (спрощено)
     print("Generating billing...")
-    # (Логіка білінгу спрощена для швидкості, але зберігає структуру)
     billing_records = []
-    for i in range(200000): # Генеруємо 200к записів
-        c_id = random.randint(1, TOTAL_HOUSEHOLDS)
-        date = get_random_date().strftime('%Y-%m-%d')
-        amount = random.choice([19.95, 30.95, 31.95, 35.95, 41.95, 48.95])
-        billing_records.append((c_id, date, amount, 'Direct Debit'))
-        if len(billing_records) > 50000:
-            cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
-            billing_records = []
+    for i in range(1, TOTAL_HOUSEHOLDS + 1):
+        for m in range(random.randint(1, 12)):
+            date = (END_DATE - timedelta(days=m*30)).strftime('%Y-%m-%d')
+            billing_records.append((i, date, random.choice([31.95, 35.95, 41.95]), 'Direct Debit'))
     
-    if billing_records:
-        cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
+    cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records[:150000])
 
     conn.commit()
     conn.close()
-    print("Database updated with full postcodes and realistic infrastructure!")
+    print("Database updated with Marketing Events and Plan Changes!")
 
 if __name__ == '__main__':
     create_db()
