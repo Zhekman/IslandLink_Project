@@ -129,8 +129,8 @@ def create_db():
     cursor.executemany('INSERT INTO infrastructure VALUES (?, ?)', list(infra_data.items()))
 
     # 3. Customers & Subscriptions
-    cust_data = []
-    sub_data = []
+    cust_records = []
+    sub_records = []
     districts = list(POSTCODES_CONFIG.keys())
     weights = [POSTCODES_CONFIG[d]['weight'] for d in districts]
 
@@ -158,26 +158,29 @@ def create_db():
         name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
         address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
         
-        cust_data.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
+        cust_records.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
         
         plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
-        sub_data.append((i+1, plan['name'], plan['rate'], join_date_str, 1))
+        sub_records.append((i+1, plan['name'], plan['rate'], join_date_str, 1))
 
-    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', cust_data)
-    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_data)
+    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', cust_records)
+    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_records)
 
     # 4. Billing
     billing_records = []
-    for i in range(1, TOTAL_HOUSEHOLDS + 1):
-        c_status = cust_data[i-1][5]
-        c_churn_date = cust_data[i-1][8] # Changed index to match churn_date in cust_data tuple
+    for i in range(len(cust_records)):
+        c_id = i + 1
+        c_status = cust_records[i][5]
+        c_join_date = cust_records[i][4]
+        c_churn_date = cust_records[i][7]
+        
         last_bill_date = END_DATE
         if c_status == 'Churned' and c_churn_date:
             last_bill_date = datetime.strptime(c_churn_date, '%Y-%m-%d')
         
-        curr = datetime.strptime(cust_data[i-1][5], '%Y-%m-%d') # join_date is index 5
+        curr = datetime.strptime(c_join_date, '%Y-%m-%d')
         while curr <= last_bill_date:
-            billing_records.append((i, curr.strftime('%Y-%m-%d'), random.choice([19.95, 30.95, 31.95]), 'Direct Debit'))
+            billing_records.append((c_id, curr.strftime('%Y-%m-%d'), random.choice([19.95, 30.95, 31.95]), 'Direct Debit'))
             curr += timedelta(days=30)
             if len(billing_records) > 50000:
                 cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
@@ -188,7 +191,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print("Database fixed: Real addresses and churn logic restored.")
+    print("Database fixed: Real addresses and billing logic restored.")
 
 if __name__ == '__main__':
     create_db()
