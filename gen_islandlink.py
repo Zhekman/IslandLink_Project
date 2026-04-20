@@ -123,11 +123,12 @@ def create_db():
 
     # 3. Customers & Subscriptions
     cust_list = []
-    sub_list = []
+    sub_inserts = []
     districts = list(POSTCODES_CONFIG.keys())
     weights = [POSTCODES_CONFIG[d]['weight'] for d in districts]
 
     for i in range(TOTAL_HOUSEHOLDS):
+        c_id = i + 1
         join_date = START_DATE + timedelta(days=random.randint(0, (END_DATE - START_DATE).days))
         join_date_str = join_date.strftime('%Y-%m-%d')
         district = random.choices(districts, weights=weights)[0]
@@ -151,7 +152,8 @@ def create_db():
         name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
         address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
         
-        cust_record = {
+        cust_list.append({
+            'id': c_id,
             'name': name,
             'address': address,
             'town': POSTCODES_CONFIG[district]['town'],
@@ -160,33 +162,49 @@ def create_db():
             'status': status,
             'source': source,
             'churn_date': churn_date
-        }
-        cust_list.append(cust_record)
+        })
         
-        plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
-        sub_list.append({'customer_id': i+1, 'plan_name': plan['name'], 'rate': plan['rate'], 'start_date': join_date_str})
+        # Initial Plan
+        initial_plan = random.choices(PLANS[:3], weights=[p['weight'] for p in PLANS[:3]])[0]
+        
+        # Upsell Logic (20% chance to have an old plan)
+        if random.random() < 0.20:
+            upgrade_date = join_date + timedelta(days=random.randint(60, 400))
+            if upgrade_date < END_DATE:
+                new_plan = random.choice(PLANS[PLANS.index(initial_plan)+1:])
+                # Add old plan as inactive
+                sub_inserts.append((c_id, initial_plan['name'], initial_plan['rate'], join_date_str, 0))
+                # Add new plan as active
+                sub_inserts.append((c_id, new_plan['name'], new_plan['rate'], upgrade_date.strftime('%Y-%m-%d'), 1))
+            else:
+                sub_inserts.append((c_id, initial_plan['name'], initial_plan['rate'], join_date_str, 1))
+        else:
+            sub_inserts.append((c_id, initial_plan['name'], initial_plan['rate'], join_date_str, 1))
 
     cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', 
                        [(c['name'], c['address'], c['town'], c['postcode'], c['join_date'], c['status'], c['source'], c['churn_date']) for c in cust_list])
-    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,1)', 
-                       [(s['customer_id'], s['plan_name'], s['rate'], s['start_date']) for s in sub_list])
+    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_inserts)
 
     # 4. Billing
-    print("Generating billing with payment statuses...")
+    print("Generating billing...")
     billing_records = []
+    # Create a lookup for active rates
+    active_plans = {s[0]: s[2] for s in sub_inserts if s[4] == 1}
+
     for i, cust in enumerate(cust_list):
-        c_id = i + 1
+        c_id = cust['id']
         last_date = END_DATE
         if cust['status'] == 'Churned' and cust['churn_date']:
             last_date = datetime.strptime(cust['churn_date'], '%Y-%m-%d')
         
         curr = datetime.strptime(cust['join_date'], '%Y-%m-%d')
+        rate = active_plans.get(c_id, 30.95)
+        
         while curr <= last_date:
-            # 98.5% success rate
             is_success = random.random() > 0.015
             status = 'Success' if is_success else 'Failed'
             reason = 'None' if is_success else random.choice(FAILURE_REASONS)
-            amount = sub_list[i]['rate'] if is_success else 0.0
+            amount = rate if is_success else 0.0
             
             billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, 'Direct Debit', status, reason))
             curr += timedelta(days=30)
@@ -200,7 +218,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print("Database finalized: All features active.")
+    print("Database finalized: Subscriptions history added.")
 
 if __name__ == '__main__':
     create_db()
