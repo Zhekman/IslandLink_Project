@@ -37,17 +37,7 @@ STREETS = ['High St', 'Main Rd', 'Victoria Ave', 'Church Rd', 'Broadway', 'Stati
 FIRST_NAMES = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth']
 LAST_NAMES = ['Smith', 'Jones', 'Taylor', 'Brown', 'Williams', 'Wilson', 'Johnson', 'Davies', 'Robinson', 'Wright']
 
-MARKETING_TYPES = [
-    {'type': 'Leaflets', 'impact': 2.5, 'cost': 500, 'scope': 'local'},
-    {'type': 'Facebook Ads', 'impact': 1.8, 'cost': 1200, 'scope': 'island'},
-    {'type': 'Radio Ad', 'impact': 1.4, 'cost': 2000, 'scope': 'island'},
-    {'type': 'Local Fair', 'impact': 3.0, 'cost': 300, 'scope': 'local'},
-    {'type': 'Google Search', 'impact': 1.2, 'cost': 800, 'scope': 'island'},
-    {'type': 'Door-to-Door', 'impact': 4.0, 'cost': 600, 'scope': 'local'},
-    {'type': 'Billboards', 'impact': 1.5, 'cost': 1500, 'scope': 'island'},
-    {'type': 'Sponsorship', 'impact': 2.0, 'cost': 1000, 'scope': 'local'},
-    {'type': 'Instagram Influencer', 'impact': 2.2, 'cost': 900, 'scope': 'island'}
-]
+FAILURE_REASONS = ['Insufficient Funds', 'Card Expired', 'Bank Declined', 'System Error']
 
 def generate_random_postcode(district):
     sector = random.randint(1, 9)
@@ -100,7 +90,9 @@ def create_db():
         customer_id INTEGER,
         invoice_date TEXT,
         amount_paid REAL,
-        payment_method TEXT
+        payment_method TEXT,
+        payment_status TEXT,
+        failure_reason TEXT
     );
 
     CREATE TABLE infrastructure (
@@ -111,13 +103,14 @@ def create_db():
 
     # 1. Marketing Events
     marketing_events = []
+    m_types = ['Leaflets', 'Facebook Ads', 'Radio Ad', 'Local Fair', 'Google Search', 'Door-to-Door', 'Billboards', 'Sponsorship', 'Instagram Influencer']
     for _ in range(250):
-        m_type = random.choice(MARKETING_TYPES)
+        m_type = random.choice(m_types)
         start_ts = random.randint(int(START_DATE.timestamp()), int(END_DATE.timestamp()))
         start_m_date = datetime.fromtimestamp(start_ts)
         end_m_date = start_m_date + timedelta(days=random.randint(3, 21))
-        area = 'Island Wide' if m_type['scope'] == 'island' else random.choice(list(POSTCODES_CONFIG.keys()))
-        marketing_events.append((m_type['type'], f"{m_type['type']} Campaign", start_m_date.strftime('%Y-%m-%d'), end_m_date.strftime('%Y-%m-%d'), m_type['cost'], area))
+        area = 'Island Wide' if random.random() > 0.6 else random.choice(list(POSTCODES_CONFIG.keys()))
+        marketing_events.append((m_type, f"{m_type} Campaign", start_m_date.strftime('%Y-%m-%d'), end_m_date.strftime('%Y-%m-%d'), random.randint(300, 2000), area))
     cursor.executemany('INSERT INTO marketing_events (event_type, campaign_name, start_date, end_date, budget, target_area) VALUES (?,?,?,?,?,?)', marketing_events)
 
     # 2. Infrastructure
@@ -166,13 +159,14 @@ def create_db():
     cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', cust_records)
     cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_records)
 
-    # 4. Billing
+    # 4. Billing with Statuses
+    print("Generating billing with payment statuses...")
     billing_records = []
     for i in range(len(cust_records)):
         c_id = i + 1
-        c_status = cust_records[i][5]
-        c_join_date = cust_records[i][4]
-        c_churn_date = cust_records[i][7]
+        c_status = cust_records[i][6]
+        c_join_date = cust_records[i][5]
+        c_churn_date = cust_records[i][8]
         
         last_bill_date = END_DATE
         if c_status == 'Churned' and c_churn_date:
@@ -180,18 +174,25 @@ def create_db():
         
         curr = datetime.strptime(c_join_date, '%Y-%m-%d')
         while curr <= last_bill_date:
-            billing_records.append((c_id, curr.strftime('%Y-%m-%d'), random.choice([19.95, 30.95, 31.95]), 'Direct Debit'))
+            # 94% success rate
+            is_success = random.random() > 0.06
+            status = 'Success' if is_success else 'Failed'
+            reason = 'None' if is_success else random.choice(FAILURE_REASONS)
+            amount = sub_records[i][2] if is_success else 0.0
+            
+            billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, 'Direct Debit', status, reason))
             curr += timedelta(days=30)
+            
             if len(billing_records) > 50000:
-                cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
+                cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method, payment_status, failure_reason) VALUES (?,?,?,?,?,?)', billing_records)
                 billing_records = []
     
     if billing_records:
-        cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method) VALUES (?,?,?,?)', billing_records)
+        cursor.executemany('INSERT INTO billing (customer_id, invoice_date, amount_paid, payment_method, payment_status, failure_reason) VALUES (?,?,?,?,?,?)', billing_records)
 
     conn.commit()
     conn.close()
-    print("Database fixed: Real addresses and billing logic restored.")
+    print("Database updated: Added payment statuses and failure reasons.")
 
 if __name__ == '__main__':
     create_db()
