@@ -33,6 +33,10 @@ POSTCODES_CONFIG = {
     'PO41': {'town': 'Yarmouth', 'weight': 1, 'coverage': 0.75}
 }
 
+STREETS = ['High St', 'Main Rd', 'Victoria Ave', 'Church Rd', 'Broadway', 'Station Rd', 'Queens Rd', 'Mill Hill Rd', 'Tithe Barn', 'Arctic Rd', 'Park Rd', 'London Rd', 'York St']
+FIRST_NAMES = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth']
+LAST_NAMES = ['Smith', 'Jones', 'Taylor', 'Brown', 'Williams', 'Wilson', 'Johnson', 'Davies', 'Robinson', 'Wright']
+
 MARKETING_TYPES = [
     {'type': 'Leaflets', 'impact': 2.5, 'cost': 500, 'scope': 'local'},
     {'type': 'Facebook Ads', 'impact': 1.8, 'cost': 1200, 'scope': 'island'},
@@ -114,7 +118,6 @@ def create_db():
         end_m_date = start_m_date + timedelta(days=random.randint(3, 21))
         area = 'Island Wide' if m_type['scope'] == 'island' else random.choice(list(POSTCODES_CONFIG.keys()))
         marketing_events.append((m_type['type'], f"{m_type['type']} Campaign", start_m_date.strftime('%Y-%m-%d'), end_m_date.strftime('%Y-%m-%d'), m_type['cost'], area))
-    
     cursor.executemany('INSERT INTO marketing_events (event_type, campaign_name, start_date, end_date, budget, target_area) VALUES (?,?,?,?,?,?)', marketing_events)
 
     # 2. Infrastructure
@@ -136,10 +139,9 @@ def create_db():
         join_date_str = join_date.strftime('%Y-%m-%d')
         district = random.choices(districts, weights=weights)[0]
         
-        # Churn Logic (fixed)
         status = 'Active'
         churn_date = None
-        if random.random() < (0.18 if district == 'PO36' else 0.12): # Базовий відтік
+        if random.random() < (0.18 if district == 'PO36' else 0.12):
             c_date = join_date + timedelta(days=random.randint(90, 600))
             if c_date < END_DATE:
                 status = 'Churned'
@@ -153,8 +155,10 @@ def create_db():
         pc_list = [pc for pc in infra_data.keys() if pc.startswith(district)]
         pc = random.choice(pc_list) if pc_list else generate_random_postcode(district)
         
-        name = f"{random.choice(['James', 'Mary', 'John', 'Patricia'])} {random.choice(['Smith', 'Jones', 'Taylor'])}"
-        cust_data.append((name, 'Street Addr', POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
+        name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
+        address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
+        
+        cust_data.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
         
         plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
         sub_data.append((i+1, plan['name'], plan['rate'], join_date_str, 1))
@@ -165,14 +169,13 @@ def create_db():
     # 4. Billing
     billing_records = []
     for i in range(1, TOTAL_HOUSEHOLDS + 1):
-        # Рахунки тільки до дати відтоку
         c_status = cust_data[i-1][5]
-        c_churn_date = cust_data[i-1][7]
+        c_churn_date = cust_data[i-1][8] # Changed index to match churn_date in cust_data tuple
         last_bill_date = END_DATE
         if c_status == 'Churned' and c_churn_date:
             last_bill_date = datetime.strptime(c_churn_date, '%Y-%m-%d')
         
-        curr = datetime.strptime(cust_data[i-1][4], '%Y-%m-%d')
+        curr = datetime.strptime(cust_data[i-1][5], '%Y-%m-%d') # join_date is index 5
         while curr <= last_bill_date:
             billing_records.append((i, curr.strftime('%Y-%m-%d'), random.choice([19.95, 30.95, 31.95]), 'Direct Debit'))
             curr += timedelta(days=30)
@@ -185,7 +188,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print("Database fixed: Churn logic and columns restored.")
+    print("Database fixed: Real addresses and churn logic restored.")
 
 if __name__ == '__main__':
     create_db()
