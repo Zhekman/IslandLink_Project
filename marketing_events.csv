@@ -1,251 +1,251 @@
 id,event_type,campaign_name,start_date,end_date,budget,target_area
-1,Facebook Ads,Facebook Ads Campaign,2024-07-16,2024-07-20,302.0,Island Wide
-2,Door-to-Door,Door-to-Door Campaign,2025-04-05,2025-04-22,424.0,PO31
-3,Door-to-Door,Door-to-Door Campaign,2023-09-16,2023-10-03,1356.0,Island Wide
-4,Instagram Influencer,Instagram Influencer Campaign,2025-05-10,2025-05-16,470.0,PO34
-5,Facebook Ads,Facebook Ads Campaign,2025-03-19,2025-04-03,478.0,PO35
-6,Instagram Influencer,Instagram Influencer Campaign,2024-06-02,2024-06-14,484.0,Island Wide
-7,Google Search,Google Search Campaign,2023-09-07,2023-09-27,1155.0,PO32
-8,Door-to-Door,Door-to-Door Campaign,2025-10-04,2025-10-07,1982.0,PO39
-9,Google Search,Google Search Campaign,2025-01-29,2025-02-18,1487.0,Island Wide
-10,Sponsorship,Sponsorship Campaign,2024-03-07,2024-03-28,978.0,PO35
-11,Billboards,Billboards Campaign,2025-03-24,2025-04-06,1920.0,PO36
-12,Sponsorship,Sponsorship Campaign,2023-06-01,2023-06-21,1556.0,PO36
-13,Leaflets,Leaflets Campaign,2023-03-30,2023-04-19,691.0,Island Wide
-14,Instagram Influencer,Instagram Influencer Campaign,2025-10-21,2025-11-06,973.0,PO37
-15,Facebook Ads,Facebook Ads Campaign,2023-08-18,2023-09-08,1429.0,Island Wide
-16,Door-to-Door,Door-to-Door Campaign,2023-05-18,2023-05-21,1858.0,PO38
-17,Facebook Ads,Facebook Ads Campaign,2024-12-27,2025-01-06,829.0,PO30
-18,Billboards,Billboards Campaign,2024-12-22,2025-01-07,1365.0,Island Wide
-19,Local Fair,Local Fair Campaign,2025-07-17,2025-08-07,1040.0,Island Wide
-20,Sponsorship,Sponsorship Campaign,2024-02-22,2024-03-01,1526.0,PO32
-21,Facebook Ads,Facebook Ads Campaign,2025-05-07,2025-05-15,952.0,PO39
-22,Instagram Influencer,Instagram Influencer Campaign,2024-02-17,2024-02-27,1052.0,Island Wide
-23,Local Fair,Local Fair Campaign,2023-05-16,2023-05-28,1925.0,Island Wide
-24,Radio Ad,Radio Ad Campaign,2023-10-28,2023-11-11,397.0,PO38
-25,Billboards,Billboards Campaign,2024-06-18,2024-06-26,486.0,PO32
-26,Facebook Ads,Facebook Ads Campaign,2025-09-22,2025-10-09,668.0,PO37
-27,Sponsorship,Sponsorship Campaign,2024-02-18,2024-02-24,1762.0,PO35
-28,Leaflets,Leaflets Campaign,2025-07-11,2025-07-15,1207.0,Island Wide
-29,Leaflets,Leaflets Campaign,2025-10-07,2025-10-19,1626.0,Island Wide
-30,Local Fair,Local Fair Campaign,2026-02-07,2026-02-14,1287.0,Island Wide
-31,Leaflets,Leaflets Campaign,2023-09-22,2023-10-11,1173.0,Island Wide
-32,Instagram Influencer,Instagram Influencer Campaign,2023-06-16,2023-06-27,1659.0,Island Wide
-33,Sponsorship,Sponsorship Campaign,2025-02-09,2025-02-16,1529.0,PO31
-34,Door-to-Door,Door-to-Door Campaign,2026-02-13,2026-03-02,1652.0,PO38
-35,Radio Ad,Radio Ad Campaign,2025-12-06,2025-12-22,1296.0,PO39
-36,Leaflets,Leaflets Campaign,2024-09-24,2024-10-06,354.0,PO35
-37,Billboards,Billboards Campaign,2025-10-22,2025-11-06,408.0,Island Wide
-38,Google Search,Google Search Campaign,2023-12-09,2023-12-30,1494.0,PO31
-39,Billboards,Billboards Campaign,2026-02-17,2026-03-07,1347.0,Island Wide
-40,Facebook Ads,Facebook Ads Campaign,2023-05-02,2023-05-07,1189.0,PO31
-41,Radio Ad,Radio Ad Campaign,2024-03-06,2024-03-24,1838.0,PO37
-42,Instagram Influencer,Instagram Influencer Campaign,2024-02-29,2024-03-07,1269.0,Island Wide
-43,Radio Ad,Radio Ad Campaign,2026-04-12,2026-04-23,1535.0,Island Wide
-44,Billboards,Billboards Campaign,2023-01-29,2023-02-15,1993.0,PO37
-45,Instagram Influencer,Instagram Influencer Campaign,2025-11-27,2025-12-03,1532.0,Island Wide
-46,Instagram Influencer,Instagram Influencer Campaign,2024-07-28,2024-08-04,617.0,Island Wide
-47,Google Search,Google Search Campaign,2025-02-17,2025-02-22,914.0,Island Wide
-48,Radio Ad,Radio Ad Campaign,2023-10-26,2023-11-15,1098.0,Island Wide
-49,Radio Ad,Radio Ad Campaign,2023-12-26,2024-01-02,697.0,Island Wide
-50,Leaflets,Leaflets Campaign,2025-12-25,2026-01-12,1212.0,PO39
-51,Sponsorship,Sponsorship Campaign,2024-03-12,2024-03-18,1557.0,PO31
-52,Leaflets,Leaflets Campaign,2025-10-04,2025-10-10,1270.0,Island Wide
-53,Radio Ad,Radio Ad Campaign,2023-12-08,2023-12-23,1547.0,PO32
-54,Google Search,Google Search Campaign,2024-10-26,2024-10-31,934.0,PO39
-55,Facebook Ads,Facebook Ads Campaign,2023-09-21,2023-10-07,680.0,PO36
-56,Billboards,Billboards Campaign,2024-01-13,2024-01-27,474.0,PO30
-57,Radio Ad,Radio Ad Campaign,2025-02-03,2025-02-11,771.0,Island Wide
-58,Radio Ad,Radio Ad Campaign,2023-05-31,2023-06-17,990.0,Island Wide
-59,Local Fair,Local Fair Campaign,2024-07-25,2024-08-07,362.0,PO32
-60,Billboards,Billboards Campaign,2026-01-18,2026-01-31,793.0,PO32
-61,Door-to-Door,Door-to-Door Campaign,2024-08-25,2024-09-09,1493.0,PO32
-62,Radio Ad,Radio Ad Campaign,2023-02-21,2023-03-01,1336.0,Island Wide
-63,Billboards,Billboards Campaign,2023-11-09,2023-11-21,1217.0,PO40
-64,Instagram Influencer,Instagram Influencer Campaign,2023-05-16,2023-06-01,1456.0,Island Wide
-65,Sponsorship,Sponsorship Campaign,2026-01-02,2026-01-08,1304.0,Island Wide
-66,Instagram Influencer,Instagram Influencer Campaign,2024-12-18,2024-12-23,1765.0,PO30
-67,Local Fair,Local Fair Campaign,2024-08-09,2024-08-30,354.0,Island Wide
-68,Radio Ad,Radio Ad Campaign,2025-01-13,2025-01-23,657.0,PO37
-69,Instagram Influencer,Instagram Influencer Campaign,2024-07-12,2024-07-29,1803.0,PO39
-70,Local Fair,Local Fair Campaign,2026-03-10,2026-03-25,1386.0,PO40
-71,Google Search,Google Search Campaign,2024-02-23,2024-03-15,442.0,Island Wide
-72,Sponsorship,Sponsorship Campaign,2025-02-05,2025-02-23,368.0,PO38
-73,Facebook Ads,Facebook Ads Campaign,2024-07-24,2024-08-01,1148.0,PO41
-74,Radio Ad,Radio Ad Campaign,2024-07-22,2024-07-26,1202.0,PO30
-75,Google Search,Google Search Campaign,2025-09-23,2025-10-02,1214.0,PO39
-76,Google Search,Google Search Campaign,2024-10-05,2024-10-17,557.0,Island Wide
-77,Leaflets,Leaflets Campaign,2024-09-19,2024-10-09,399.0,PO41
-78,Radio Ad,Radio Ad Campaign,2025-10-23,2025-10-29,1546.0,PO32
-79,Local Fair,Local Fair Campaign,2024-01-26,2024-02-04,752.0,PO31
-80,Door-to-Door,Door-to-Door Campaign,2023-03-27,2023-04-03,401.0,PO35
-81,Sponsorship,Sponsorship Campaign,2023-05-29,2023-06-02,1015.0,Island Wide
-82,Local Fair,Local Fair Campaign,2025-08-05,2025-08-26,1115.0,PO30
-83,Local Fair,Local Fair Campaign,2025-03-12,2025-03-31,1394.0,Island Wide
-84,Instagram Influencer,Instagram Influencer Campaign,2026-02-16,2026-03-08,1113.0,Island Wide
-85,Radio Ad,Radio Ad Campaign,2023-01-04,2023-01-08,1612.0,PO33
-86,Radio Ad,Radio Ad Campaign,2024-05-08,2024-05-25,1398.0,Island Wide
-87,Billboards,Billboards Campaign,2023-04-27,2023-05-08,606.0,Island Wide
-88,Local Fair,Local Fair Campaign,2025-04-19,2025-05-10,1884.0,PO41
-89,Door-to-Door,Door-to-Door Campaign,2025-05-14,2025-06-02,503.0,PO33
-90,Leaflets,Leaflets Campaign,2024-10-15,2024-11-05,982.0,PO37
-91,Instagram Influencer,Instagram Influencer Campaign,2023-04-23,2023-04-30,1804.0,PO31
-92,Google Search,Google Search Campaign,2026-01-11,2026-01-22,1480.0,PO41
-93,Radio Ad,Radio Ad Campaign,2023-06-23,2023-07-05,1753.0,Island Wide
-94,Instagram Influencer,Instagram Influencer Campaign,2025-02-09,2025-02-14,1930.0,Island Wide
-95,Local Fair,Local Fair Campaign,2023-11-25,2023-11-30,511.0,Island Wide
-96,Door-to-Door,Door-to-Door Campaign,2024-04-17,2024-05-05,1485.0,Island Wide
-97,Radio Ad,Radio Ad Campaign,2025-10-24,2025-11-08,1168.0,Island Wide
-98,Facebook Ads,Facebook Ads Campaign,2023-08-07,2023-08-20,999.0,PO36
-99,Google Search,Google Search Campaign,2025-04-05,2025-04-12,1494.0,Island Wide
-100,Leaflets,Leaflets Campaign,2025-02-22,2025-03-03,669.0,Island Wide
-101,Local Fair,Local Fair Campaign,2023-09-09,2023-09-16,370.0,Island Wide
-102,Leaflets,Leaflets Campaign,2023-08-31,2023-09-11,594.0,Island Wide
-103,Radio Ad,Radio Ad Campaign,2024-06-04,2024-06-18,1239.0,PO36
-104,Google Search,Google Search Campaign,2024-04-12,2024-04-16,520.0,PO39
-105,Instagram Influencer,Instagram Influencer Campaign,2023-04-28,2023-05-09,1150.0,PO30
-106,Instagram Influencer,Instagram Influencer Campaign,2023-12-31,2024-01-04,1563.0,PO41
-107,Google Search,Google Search Campaign,2023-11-17,2023-11-30,1898.0,PO37
-108,Radio Ad,Radio Ad Campaign,2025-04-06,2025-04-27,1191.0,PO34
-109,Leaflets,Leaflets Campaign,2023-10-09,2023-10-13,533.0,Island Wide
-110,Door-to-Door,Door-to-Door Campaign,2025-05-25,2025-06-05,1515.0,Island Wide
-111,Door-to-Door,Door-to-Door Campaign,2025-03-21,2025-04-10,1595.0,PO31
-112,Leaflets,Leaflets Campaign,2024-07-21,2024-08-01,456.0,Island Wide
-113,Google Search,Google Search Campaign,2025-04-28,2025-05-04,1989.0,PO38
-114,Instagram Influencer,Instagram Influencer Campaign,2025-08-14,2025-08-28,1478.0,Island Wide
-115,Billboards,Billboards Campaign,2026-03-21,2026-04-02,1109.0,Island Wide
-116,Google Search,Google Search Campaign,2025-10-04,2025-10-07,850.0,PO31
-117,Local Fair,Local Fair Campaign,2023-10-30,2023-11-03,1221.0,PO33
-118,Door-to-Door,Door-to-Door Campaign,2023-05-29,2023-06-17,1605.0,PO35
-119,Google Search,Google Search Campaign,2023-07-13,2023-07-22,1730.0,Island Wide
-120,Google Search,Google Search Campaign,2023-10-08,2023-10-19,1295.0,Island Wide
-121,Billboards,Billboards Campaign,2023-01-04,2023-01-24,1432.0,Island Wide
-122,Facebook Ads,Facebook Ads Campaign,2025-12-21,2025-12-31,662.0,Island Wide
-123,Sponsorship,Sponsorship Campaign,2023-01-19,2023-02-08,1113.0,PO33
-124,Leaflets,Leaflets Campaign,2025-09-02,2025-09-10,1581.0,Island Wide
-125,Sponsorship,Sponsorship Campaign,2024-03-30,2024-04-11,693.0,Island Wide
-126,Google Search,Google Search Campaign,2025-10-18,2025-10-22,1260.0,PO38
-127,Leaflets,Leaflets Campaign,2023-12-09,2023-12-20,1446.0,PO31
-128,Facebook Ads,Facebook Ads Campaign,2026-02-26,2026-03-11,689.0,PO41
-129,Door-to-Door,Door-to-Door Campaign,2025-02-17,2025-02-21,1724.0,PO39
-130,Billboards,Billboards Campaign,2025-06-13,2025-06-19,427.0,PO39
-131,Sponsorship,Sponsorship Campaign,2026-02-05,2026-02-23,1365.0,Island Wide
-132,Facebook Ads,Facebook Ads Campaign,2025-02-04,2025-02-18,388.0,Island Wide
-133,Instagram Influencer,Instagram Influencer Campaign,2026-01-04,2026-01-25,732.0,Island Wide
-134,Leaflets,Leaflets Campaign,2025-04-28,2025-05-16,1780.0,Island Wide
-135,Billboards,Billboards Campaign,2026-02-10,2026-02-14,1104.0,PO32
-136,Billboards,Billboards Campaign,2025-01-11,2025-01-18,1964.0,PO35
-137,Local Fair,Local Fair Campaign,2026-02-24,2026-03-02,1177.0,PO38
-138,Leaflets,Leaflets Campaign,2023-02-25,2023-03-14,751.0,PO35
-139,Leaflets,Leaflets Campaign,2025-03-29,2025-04-16,660.0,Island Wide
-140,Instagram Influencer,Instagram Influencer Campaign,2026-03-18,2026-03-23,908.0,PO34
-141,Radio Ad,Radio Ad Campaign,2024-02-28,2024-03-04,466.0,Island Wide
-142,Leaflets,Leaflets Campaign,2023-07-16,2023-08-06,1031.0,Island Wide
-143,Sponsorship,Sponsorship Campaign,2026-02-09,2026-02-12,1755.0,Island Wide
-144,Billboards,Billboards Campaign,2024-09-10,2024-09-21,1048.0,PO31
-145,Facebook Ads,Facebook Ads Campaign,2025-07-13,2025-07-25,862.0,Island Wide
-146,Billboards,Billboards Campaign,2024-08-17,2024-09-07,1604.0,PO35
-147,Facebook Ads,Facebook Ads Campaign,2025-10-09,2025-10-28,1171.0,PO30
-148,Facebook Ads,Facebook Ads Campaign,2023-02-16,2023-02-19,697.0,PO38
-149,Sponsorship,Sponsorship Campaign,2025-01-22,2025-02-06,1991.0,PO40
-150,Billboards,Billboards Campaign,2026-03-09,2026-03-26,314.0,Island Wide
-151,Billboards,Billboards Campaign,2024-12-21,2024-12-31,630.0,Island Wide
-152,Google Search,Google Search Campaign,2024-10-05,2024-10-08,956.0,PO33
-153,Facebook Ads,Facebook Ads Campaign,2023-01-25,2023-02-11,982.0,PO34
-154,Local Fair,Local Fair Campaign,2024-10-08,2024-10-27,1590.0,PO36
-155,Sponsorship,Sponsorship Campaign,2023-02-03,2023-02-14,1734.0,PO39
-156,Instagram Influencer,Instagram Influencer Campaign,2023-01-03,2023-01-20,950.0,Island Wide
-157,Billboards,Billboards Campaign,2026-02-05,2026-02-13,702.0,Island Wide
-158,Google Search,Google Search Campaign,2024-06-02,2024-06-17,1111.0,PO33
-159,Google Search,Google Search Campaign,2025-03-14,2025-03-29,1382.0,PO32
-160,Radio Ad,Radio Ad Campaign,2025-07-07,2025-07-16,798.0,Island Wide
-161,Sponsorship,Sponsorship Campaign,2023-01-01,2023-01-06,1264.0,PO30
-162,Google Search,Google Search Campaign,2023-02-08,2023-02-13,1569.0,PO38
-163,Instagram Influencer,Instagram Influencer Campaign,2025-05-03,2025-05-24,1466.0,PO33
-164,Facebook Ads,Facebook Ads Campaign,2024-02-29,2024-03-20,710.0,PO38
-165,Google Search,Google Search Campaign,2024-04-11,2024-04-25,951.0,Island Wide
-166,Facebook Ads,Facebook Ads Campaign,2026-02-07,2026-02-26,1098.0,PO37
-167,Google Search,Google Search Campaign,2023-01-01,2023-01-06,509.0,Island Wide
-168,Radio Ad,Radio Ad Campaign,2023-04-06,2023-04-17,1883.0,Island Wide
-169,Door-to-Door,Door-to-Door Campaign,2025-12-07,2025-12-23,1988.0,PO30
-170,Facebook Ads,Facebook Ads Campaign,2025-06-17,2025-06-23,569.0,PO30
-171,Local Fair,Local Fair Campaign,2025-10-10,2025-10-31,1652.0,PO41
-172,Sponsorship,Sponsorship Campaign,2025-07-10,2025-07-17,547.0,Island Wide
-173,Radio Ad,Radio Ad Campaign,2023-12-09,2023-12-17,312.0,Island Wide
-174,Leaflets,Leaflets Campaign,2023-05-24,2023-05-28,1514.0,Island Wide
-175,Leaflets,Leaflets Campaign,2024-05-13,2024-05-28,714.0,Island Wide
-176,Google Search,Google Search Campaign,2026-02-03,2026-02-17,1477.0,Island Wide
-177,Leaflets,Leaflets Campaign,2023-03-17,2023-03-21,1037.0,Island Wide
-178,Google Search,Google Search Campaign,2024-08-13,2024-08-30,862.0,PO34
-179,Leaflets,Leaflets Campaign,2023-04-03,2023-04-20,1117.0,PO30
-180,Instagram Influencer,Instagram Influencer Campaign,2025-12-24,2025-12-30,834.0,Island Wide
-181,Instagram Influencer,Instagram Influencer Campaign,2023-05-18,2023-06-04,1890.0,PO36
-182,Local Fair,Local Fair Campaign,2023-03-04,2023-03-25,491.0,PO35
-183,Instagram Influencer,Instagram Influencer Campaign,2023-12-25,2023-12-30,1783.0,PO30
-184,Leaflets,Leaflets Campaign,2024-08-10,2024-08-17,896.0,PO30
-185,Door-to-Door,Door-to-Door Campaign,2023-12-11,2023-12-26,1124.0,PO34
-186,Instagram Influencer,Instagram Influencer Campaign,2023-03-12,2023-03-21,1275.0,Island Wide
-187,Instagram Influencer,Instagram Influencer Campaign,2024-02-07,2024-02-12,1911.0,PO32
-188,Facebook Ads,Facebook Ads Campaign,2024-02-04,2024-02-09,1254.0,PO36
-189,Facebook Ads,Facebook Ads Campaign,2024-03-19,2024-04-05,986.0,Island Wide
-190,Sponsorship,Sponsorship Campaign,2023-02-12,2023-02-23,1637.0,PO38
-191,Instagram Influencer,Instagram Influencer Campaign,2024-07-15,2024-07-20,1861.0,Island Wide
-192,Facebook Ads,Facebook Ads Campaign,2025-10-30,2025-11-11,1846.0,PO38
-193,Facebook Ads,Facebook Ads Campaign,2025-08-26,2025-09-05,414.0,Island Wide
-194,Local Fair,Local Fair Campaign,2023-03-31,2023-04-16,726.0,PO40
-195,Sponsorship,Sponsorship Campaign,2023-02-12,2023-02-18,1714.0,Island Wide
-196,Facebook Ads,Facebook Ads Campaign,2024-09-13,2024-09-29,1924.0,PO30
-197,Instagram Influencer,Instagram Influencer Campaign,2023-08-20,2023-08-26,1211.0,Island Wide
-198,Sponsorship,Sponsorship Campaign,2024-08-04,2024-08-20,1781.0,Island Wide
-199,Leaflets,Leaflets Campaign,2023-04-25,2023-05-15,1342.0,PO32
-200,Billboards,Billboards Campaign,2024-04-06,2024-04-22,569.0,PO38
-201,Leaflets,Leaflets Campaign,2024-08-28,2024-09-12,892.0,PO32
-202,Sponsorship,Sponsorship Campaign,2024-07-20,2024-07-30,596.0,Island Wide
-203,Door-to-Door,Door-to-Door Campaign,2023-07-23,2023-08-12,1088.0,Island Wide
-204,Google Search,Google Search Campaign,2026-02-23,2026-03-13,862.0,Island Wide
-205,Instagram Influencer,Instagram Influencer Campaign,2023-06-27,2023-07-10,989.0,PO31
-206,Sponsorship,Sponsorship Campaign,2026-01-20,2026-02-08,1995.0,Island Wide
-207,Facebook Ads,Facebook Ads Campaign,2025-05-04,2025-05-08,564.0,Island Wide
-208,Door-to-Door,Door-to-Door Campaign,2025-08-05,2025-08-15,825.0,Island Wide
-209,Facebook Ads,Facebook Ads Campaign,2023-05-15,2023-05-24,617.0,PO35
-210,Instagram Influencer,Instagram Influencer Campaign,2025-09-17,2025-10-02,1129.0,Island Wide
-211,Billboards,Billboards Campaign,2026-02-27,2026-03-04,710.0,PO39
-212,Google Search,Google Search Campaign,2023-12-21,2023-12-26,436.0,PO41
-213,Facebook Ads,Facebook Ads Campaign,2025-07-12,2025-08-01,1967.0,Island Wide
-214,Facebook Ads,Facebook Ads Campaign,2025-03-14,2025-03-24,518.0,PO40
-215,Radio Ad,Radio Ad Campaign,2026-02-27,2026-03-13,1956.0,Island Wide
-216,Radio Ad,Radio Ad Campaign,2024-11-10,2024-11-15,747.0,Island Wide
-217,Sponsorship,Sponsorship Campaign,2024-04-17,2024-05-02,1251.0,PO33
-218,Google Search,Google Search Campaign,2025-07-28,2025-08-16,465.0,PO41
-219,Sponsorship,Sponsorship Campaign,2024-06-29,2024-07-16,1067.0,PO36
-220,Google Search,Google Search Campaign,2023-05-01,2023-05-19,874.0,Island Wide
-221,Door-to-Door,Door-to-Door Campaign,2026-02-17,2026-03-03,522.0,PO32
-222,Google Search,Google Search Campaign,2025-12-10,2025-12-31,1569.0,PO32
-223,Sponsorship,Sponsorship Campaign,2026-01-07,2026-01-15,1268.0,Island Wide
-224,Sponsorship,Sponsorship Campaign,2025-04-10,2025-04-26,1255.0,PO32
-225,Google Search,Google Search Campaign,2026-04-14,2026-05-04,632.0,Island Wide
-226,Local Fair,Local Fair Campaign,2024-12-06,2024-12-20,465.0,PO39
-227,Google Search,Google Search Campaign,2025-05-18,2025-06-06,1323.0,PO40
-228,Radio Ad,Radio Ad Campaign,2024-07-04,2024-07-24,1702.0,PO38
-229,Door-to-Door,Door-to-Door Campaign,2025-05-18,2025-05-27,1246.0,PO40
-230,Local Fair,Local Fair Campaign,2023-07-13,2023-07-18,703.0,Island Wide
-231,Leaflets,Leaflets Campaign,2025-02-14,2025-02-22,313.0,Island Wide
-232,Local Fair,Local Fair Campaign,2023-06-02,2023-06-22,1444.0,PO33
-233,Billboards,Billboards Campaign,2024-08-24,2024-09-14,572.0,PO30
-234,Radio Ad,Radio Ad Campaign,2025-07-15,2025-08-05,718.0,Island Wide
-235,Local Fair,Local Fair Campaign,2023-10-11,2023-10-23,902.0,Island Wide
-236,Instagram Influencer,Instagram Influencer Campaign,2023-02-28,2023-03-12,1664.0,PO32
-237,Radio Ad,Radio Ad Campaign,2024-01-24,2024-02-14,1086.0,PO30
-238,Radio Ad,Radio Ad Campaign,2025-03-24,2025-03-28,1489.0,Island Wide
-239,Local Fair,Local Fair Campaign,2023-02-16,2023-03-02,1752.0,PO33
-240,Sponsorship,Sponsorship Campaign,2023-06-09,2023-06-18,1155.0,Island Wide
-241,Facebook Ads,Facebook Ads Campaign,2025-06-11,2025-06-20,1411.0,Island Wide
-242,Instagram Influencer,Instagram Influencer Campaign,2026-04-06,2026-04-11,842.0,Island Wide
-243,Instagram Influencer,Instagram Influencer Campaign,2023-02-05,2023-02-14,402.0,Island Wide
-244,Sponsorship,Sponsorship Campaign,2025-03-06,2025-03-21,1949.0,PO33
-245,Radio Ad,Radio Ad Campaign,2023-03-10,2023-03-25,1009.0,Island Wide
-246,Leaflets,Leaflets Campaign,2026-03-07,2026-03-15,888.0,PO39
-247,Google Search,Google Search Campaign,2024-08-22,2024-09-03,468.0,PO33
-248,Instagram Influencer,Instagram Influencer Campaign,2025-11-04,2025-11-07,578.0,Island Wide
-249,Instagram Influencer,Instagram Influencer Campaign,2024-11-13,2024-11-23,944.0,PO34
-250,Local Fair,Local Fair Campaign,2024-06-30,2024-07-11,705.0,Island Wide
+1,Leaflets,Leaflets Campaign,2025-06-09,2025-06-16,1657.0,PO40
+2,Instagram Influencer,Instagram Influencer Campaign,2024-07-25,2024-08-09,1127.0,Island Wide
+3,Radio Ad,Radio Ad Campaign,2023-01-25,2023-01-31,1729.0,PO33
+4,Instagram Influencer,Instagram Influencer Campaign,2024-09-15,2024-09-29,1348.0,PO41
+5,Google Search,Google Search Campaign,2023-12-17,2023-12-28,1901.0,PO40
+6,Radio Ad,Radio Ad Campaign,2023-03-27,2023-03-30,1753.0,Island Wide
+7,Door-to-Door,Door-to-Door Campaign,2023-04-17,2023-04-28,888.0,Island Wide
+8,Instagram Influencer,Instagram Influencer Campaign,2023-12-05,2023-12-12,869.0,Island Wide
+9,Facebook Ads,Facebook Ads Campaign,2025-04-21,2025-05-11,1006.0,PO39
+10,Instagram Influencer,Instagram Influencer Campaign,2026-01-30,2026-02-03,663.0,Island Wide
+11,Radio Ad,Radio Ad Campaign,2025-10-19,2025-10-25,662.0,Island Wide
+12,Local Fair,Local Fair Campaign,2025-11-04,2025-11-24,1514.0,Island Wide
+13,Local Fair,Local Fair Campaign,2024-03-03,2024-03-07,1209.0,PO39
+14,Door-to-Door,Door-to-Door Campaign,2023-10-08,2023-10-13,925.0,PO41
+15,Radio Ad,Radio Ad Campaign,2024-10-24,2024-10-30,1371.0,PO41
+16,Local Fair,Local Fair Campaign,2023-08-03,2023-08-20,533.0,PO32
+17,Google Search,Google Search Campaign,2023-02-22,2023-02-25,1175.0,Island Wide
+18,Local Fair,Local Fair Campaign,2023-11-08,2023-11-26,780.0,Island Wide
+19,Radio Ad,Radio Ad Campaign,2025-01-14,2025-01-30,1249.0,PO39
+20,Billboards,Billboards Campaign,2024-04-25,2024-05-04,1322.0,PO32
+21,Facebook Ads,Facebook Ads Campaign,2024-02-17,2024-02-28,988.0,PO33
+22,Billboards,Billboards Campaign,2023-11-23,2023-11-29,791.0,Island Wide
+23,Instagram Influencer,Instagram Influencer Campaign,2025-01-19,2025-02-05,1456.0,PO40
+24,Radio Ad,Radio Ad Campaign,2024-08-20,2024-08-31,718.0,PO41
+25,Facebook Ads,Facebook Ads Campaign,2023-08-14,2023-08-25,510.0,PO41
+26,Sponsorship,Sponsorship Campaign,2023-12-16,2024-01-02,506.0,PO39
+27,Leaflets,Leaflets Campaign,2025-06-17,2025-06-24,1472.0,PO35
+28,Facebook Ads,Facebook Ads Campaign,2023-08-27,2023-09-06,664.0,PO39
+29,Radio Ad,Radio Ad Campaign,2024-11-20,2024-12-01,828.0,PO36
+30,Leaflets,Leaflets Campaign,2025-07-09,2025-07-28,1771.0,PO38
+31,Instagram Influencer,Instagram Influencer Campaign,2024-12-23,2025-01-10,663.0,PO41
+32,Sponsorship,Sponsorship Campaign,2024-01-01,2024-01-20,733.0,PO36
+33,Google Search,Google Search Campaign,2025-07-16,2025-08-02,574.0,Island Wide
+34,Instagram Influencer,Instagram Influencer Campaign,2023-11-05,2023-11-18,771.0,PO37
+35,Google Search,Google Search Campaign,2025-08-24,2025-08-28,1324.0,PO38
+36,Google Search,Google Search Campaign,2024-05-28,2024-06-18,1489.0,PO37
+37,Instagram Influencer,Instagram Influencer Campaign,2025-11-29,2025-12-14,421.0,PO37
+38,Facebook Ads,Facebook Ads Campaign,2024-09-23,2024-10-14,1445.0,PO40
+39,Billboards,Billboards Campaign,2025-11-11,2025-11-28,884.0,PO32
+40,Door-to-Door,Door-to-Door Campaign,2023-05-10,2023-05-23,752.0,Island Wide
+41,Instagram Influencer,Instagram Influencer Campaign,2025-08-12,2025-08-31,1016.0,Island Wide
+42,Leaflets,Leaflets Campaign,2023-01-17,2023-01-22,340.0,Island Wide
+43,Leaflets,Leaflets Campaign,2025-01-18,2025-02-08,1156.0,Island Wide
+44,Instagram Influencer,Instagram Influencer Campaign,2024-12-21,2025-01-04,926.0,Island Wide
+45,Google Search,Google Search Campaign,2023-10-15,2023-10-19,790.0,Island Wide
+46,Instagram Influencer,Instagram Influencer Campaign,2023-02-24,2023-03-02,704.0,PO38
+47,Door-to-Door,Door-to-Door Campaign,2023-05-30,2023-06-09,427.0,Island Wide
+48,Sponsorship,Sponsorship Campaign,2023-06-28,2023-07-05,769.0,Island Wide
+49,Facebook Ads,Facebook Ads Campaign,2024-11-03,2024-11-20,1284.0,Island Wide
+50,Door-to-Door,Door-to-Door Campaign,2024-11-21,2024-12-01,1072.0,Island Wide
+51,Radio Ad,Radio Ad Campaign,2025-12-24,2026-01-14,350.0,PO41
+52,Billboards,Billboards Campaign,2023-04-26,2023-05-16,1614.0,PO35
+53,Leaflets,Leaflets Campaign,2024-08-18,2024-09-03,761.0,PO35
+54,Billboards,Billboards Campaign,2024-09-11,2024-09-23,442.0,PO39
+55,Billboards,Billboards Campaign,2023-02-27,2023-03-12,1560.0,Island Wide
+56,Billboards,Billboards Campaign,2024-06-15,2024-06-28,1095.0,PO30
+57,Radio Ad,Radio Ad Campaign,2023-08-06,2023-08-13,1865.0,Island Wide
+58,Local Fair,Local Fair Campaign,2023-03-19,2023-04-02,998.0,PO34
+59,Billboards,Billboards Campaign,2024-04-26,2024-05-01,1983.0,Island Wide
+60,Billboards,Billboards Campaign,2025-11-24,2025-12-15,1737.0,PO32
+61,Radio Ad,Radio Ad Campaign,2023-07-03,2023-07-24,1420.0,PO32
+62,Billboards,Billboards Campaign,2025-05-26,2025-06-05,1763.0,PO36
+63,Local Fair,Local Fair Campaign,2024-08-27,2024-09-10,1400.0,PO39
+64,Local Fair,Local Fair Campaign,2025-04-22,2025-05-12,494.0,PO41
+65,Sponsorship,Sponsorship Campaign,2025-03-20,2025-04-06,693.0,PO34
+66,Local Fair,Local Fair Campaign,2026-01-03,2026-01-12,496.0,Island Wide
+67,Billboards,Billboards Campaign,2024-11-01,2024-11-21,1657.0,Island Wide
+68,Google Search,Google Search Campaign,2024-03-30,2024-04-10,334.0,Island Wide
+69,Radio Ad,Radio Ad Campaign,2025-11-26,2025-12-01,1322.0,Island Wide
+70,Local Fair,Local Fair Campaign,2025-02-06,2025-02-15,1733.0,Island Wide
+71,Instagram Influencer,Instagram Influencer Campaign,2025-07-04,2025-07-20,577.0,Island Wide
+72,Facebook Ads,Facebook Ads Campaign,2025-01-23,2025-01-31,1210.0,Island Wide
+73,Sponsorship,Sponsorship Campaign,2024-09-23,2024-10-02,1424.0,Island Wide
+74,Door-to-Door,Door-to-Door Campaign,2023-10-11,2023-10-25,1413.0,PO33
+75,Billboards,Billboards Campaign,2024-04-06,2024-04-21,461.0,PO31
+76,Instagram Influencer,Instagram Influencer Campaign,2023-12-16,2023-12-25,1913.0,PO31
+77,Billboards,Billboards Campaign,2023-03-12,2023-03-16,1941.0,Island Wide
+78,Local Fair,Local Fair Campaign,2023-10-22,2023-11-04,1008.0,PO30
+79,Leaflets,Leaflets Campaign,2024-08-08,2024-08-17,1184.0,Island Wide
+80,Facebook Ads,Facebook Ads Campaign,2023-11-03,2023-11-08,1205.0,PO41
+81,Local Fair,Local Fair Campaign,2025-03-17,2025-03-27,1533.0,PO38
+82,Sponsorship,Sponsorship Campaign,2025-04-21,2025-05-02,1048.0,Island Wide
+83,Google Search,Google Search Campaign,2023-12-11,2023-12-16,501.0,PO32
+84,Radio Ad,Radio Ad Campaign,2023-09-02,2023-09-09,326.0,PO40
+85,Radio Ad,Radio Ad Campaign,2023-11-15,2023-11-25,1542.0,Island Wide
+86,Local Fair,Local Fair Campaign,2023-10-12,2023-10-19,1050.0,Island Wide
+87,Sponsorship,Sponsorship Campaign,2025-01-26,2025-02-13,424.0,Island Wide
+88,Local Fair,Local Fair Campaign,2026-03-24,2026-04-01,508.0,Island Wide
+89,Instagram Influencer,Instagram Influencer Campaign,2023-11-04,2023-11-19,1689.0,PO37
+90,Google Search,Google Search Campaign,2024-03-22,2024-03-31,1225.0,PO30
+91,Google Search,Google Search Campaign,2026-02-17,2026-02-25,1129.0,PO35
+92,Facebook Ads,Facebook Ads Campaign,2025-09-04,2025-09-07,390.0,PO39
+93,Door-to-Door,Door-to-Door Campaign,2025-02-12,2025-02-17,1795.0,Island Wide
+94,Radio Ad,Radio Ad Campaign,2024-06-22,2024-07-12,493.0,PO30
+95,Instagram Influencer,Instagram Influencer Campaign,2023-03-15,2023-03-20,1736.0,Island Wide
+96,Door-to-Door,Door-to-Door Campaign,2026-02-01,2026-02-22,1871.0,PO33
+97,Door-to-Door,Door-to-Door Campaign,2025-05-16,2025-05-26,1580.0,PO31
+98,Sponsorship,Sponsorship Campaign,2024-11-16,2024-11-30,1465.0,PO35
+99,Facebook Ads,Facebook Ads Campaign,2025-02-20,2025-03-11,922.0,PO37
+100,Instagram Influencer,Instagram Influencer Campaign,2023-09-08,2023-09-11,781.0,Island Wide
+101,Sponsorship,Sponsorship Campaign,2023-06-29,2023-07-18,1257.0,Island Wide
+102,Leaflets,Leaflets Campaign,2023-12-19,2024-01-04,1642.0,PO40
+103,Leaflets,Leaflets Campaign,2023-08-02,2023-08-16,1972.0,PO41
+104,Local Fair,Local Fair Campaign,2024-11-10,2024-11-19,610.0,Island Wide
+105,Facebook Ads,Facebook Ads Campaign,2023-05-05,2023-05-24,1931.0,PO38
+106,Billboards,Billboards Campaign,2024-07-13,2024-08-03,1929.0,Island Wide
+107,Door-to-Door,Door-to-Door Campaign,2025-05-04,2025-05-22,1179.0,PO35
+108,Facebook Ads,Facebook Ads Campaign,2023-06-07,2023-06-15,1558.0,PO39
+109,Radio Ad,Radio Ad Campaign,2025-02-09,2025-02-15,1541.0,Island Wide
+110,Door-to-Door,Door-to-Door Campaign,2023-04-06,2023-04-11,632.0,PO30
+111,Door-to-Door,Door-to-Door Campaign,2023-12-23,2023-12-30,854.0,Island Wide
+112,Leaflets,Leaflets Campaign,2025-11-15,2025-11-21,1662.0,Island Wide
+113,Leaflets,Leaflets Campaign,2025-05-03,2025-05-16,1474.0,PO39
+114,Local Fair,Local Fair Campaign,2026-04-15,2026-05-04,1275.0,PO31
+115,Door-to-Door,Door-to-Door Campaign,2024-12-03,2024-12-17,1344.0,Island Wide
+116,Sponsorship,Sponsorship Campaign,2025-05-26,2025-06-09,722.0,PO37
+117,Instagram Influencer,Instagram Influencer Campaign,2024-05-01,2024-05-06,1737.0,Island Wide
+118,Door-to-Door,Door-to-Door Campaign,2023-05-20,2023-06-04,786.0,Island Wide
+119,Local Fair,Local Fair Campaign,2023-11-07,2023-11-12,1867.0,Island Wide
+120,Door-to-Door,Door-to-Door Campaign,2023-06-30,2023-07-09,1792.0,PO30
+121,Instagram Influencer,Instagram Influencer Campaign,2025-02-22,2025-03-08,1095.0,PO39
+122,Billboards,Billboards Campaign,2025-06-06,2025-06-25,1773.0,Island Wide
+123,Radio Ad,Radio Ad Campaign,2023-11-17,2023-12-08,704.0,PO33
+124,Door-to-Door,Door-to-Door Campaign,2025-03-11,2025-03-21,1015.0,Island Wide
+125,Radio Ad,Radio Ad Campaign,2024-01-21,2024-01-31,1271.0,PO30
+126,Local Fair,Local Fair Campaign,2023-06-24,2023-07-04,964.0,PO31
+127,Sponsorship,Sponsorship Campaign,2024-07-14,2024-07-21,635.0,PO40
+128,Sponsorship,Sponsorship Campaign,2025-05-16,2025-06-02,1405.0,Island Wide
+129,Sponsorship,Sponsorship Campaign,2025-10-28,2025-11-08,589.0,Island Wide
+130,Leaflets,Leaflets Campaign,2024-03-07,2024-03-24,536.0,Island Wide
+131,Facebook Ads,Facebook Ads Campaign,2023-02-08,2023-02-28,1193.0,PO37
+132,Door-to-Door,Door-to-Door Campaign,2024-11-14,2024-11-27,1541.0,Island Wide
+133,Google Search,Google Search Campaign,2025-05-29,2025-06-12,1203.0,Island Wide
+134,Billboards,Billboards Campaign,2025-11-23,2025-12-13,1401.0,Island Wide
+135,Leaflets,Leaflets Campaign,2025-06-09,2025-06-30,1044.0,Island Wide
+136,Billboards,Billboards Campaign,2026-03-01,2026-03-16,1011.0,Island Wide
+137,Leaflets,Leaflets Campaign,2024-08-01,2024-08-06,936.0,PO36
+138,Google Search,Google Search Campaign,2025-02-17,2025-03-01,1972.0,Island Wide
+139,Instagram Influencer,Instagram Influencer Campaign,2024-04-02,2024-04-17,1687.0,PO37
+140,Google Search,Google Search Campaign,2023-01-02,2023-01-23,1629.0,Island Wide
+141,Door-to-Door,Door-to-Door Campaign,2023-04-01,2023-04-07,831.0,PO34
+142,Radio Ad,Radio Ad Campaign,2023-07-08,2023-07-21,1778.0,PO40
+143,Local Fair,Local Fair Campaign,2026-01-23,2026-01-31,1262.0,PO36
+144,Leaflets,Leaflets Campaign,2025-05-07,2025-05-19,1323.0,Island Wide
+145,Door-to-Door,Door-to-Door Campaign,2024-10-15,2024-10-27,398.0,PO30
+146,Billboards,Billboards Campaign,2024-02-03,2024-02-22,461.0,PO31
+147,Radio Ad,Radio Ad Campaign,2025-03-25,2025-04-14,348.0,Island Wide
+148,Leaflets,Leaflets Campaign,2023-01-28,2023-02-18,719.0,Island Wide
+149,Billboards,Billboards Campaign,2025-03-01,2025-03-16,1054.0,Island Wide
+150,Sponsorship,Sponsorship Campaign,2025-03-22,2025-04-07,1390.0,Island Wide
+151,Facebook Ads,Facebook Ads Campaign,2023-04-25,2023-04-29,1567.0,PO40
+152,Door-to-Door,Door-to-Door Campaign,2024-03-27,2024-03-30,1901.0,PO33
+153,Door-to-Door,Door-to-Door Campaign,2024-12-24,2025-01-11,1735.0,Island Wide
+154,Google Search,Google Search Campaign,2023-04-21,2023-05-05,808.0,PO38
+155,Google Search,Google Search Campaign,2025-07-13,2025-07-20,362.0,PO31
+156,Radio Ad,Radio Ad Campaign,2025-11-10,2025-11-27,1649.0,Island Wide
+157,Google Search,Google Search Campaign,2023-04-30,2023-05-16,1915.0,PO41
+158,Instagram Influencer,Instagram Influencer Campaign,2023-09-14,2023-09-24,606.0,Island Wide
+159,Instagram Influencer,Instagram Influencer Campaign,2025-07-23,2025-07-26,1109.0,PO35
+160,Local Fair,Local Fair Campaign,2025-11-12,2025-11-16,352.0,PO38
+161,Facebook Ads,Facebook Ads Campaign,2023-09-21,2023-10-04,1379.0,PO36
+162,Local Fair,Local Fair Campaign,2025-02-18,2025-03-03,1398.0,PO31
+163,Google Search,Google Search Campaign,2026-02-23,2026-02-28,1136.0,PO36
+164,Local Fair,Local Fair Campaign,2023-12-17,2024-01-02,1603.0,PO36
+165,Local Fair,Local Fair Campaign,2024-03-27,2024-04-05,1912.0,PO34
+166,Billboards,Billboards Campaign,2024-09-12,2024-09-16,1610.0,Island Wide
+167,Instagram Influencer,Instagram Influencer Campaign,2024-02-01,2024-02-17,1188.0,Island Wide
+168,Billboards,Billboards Campaign,2025-08-24,2025-09-13,369.0,Island Wide
+169,Sponsorship,Sponsorship Campaign,2025-03-09,2025-03-12,1981.0,Island Wide
+170,Local Fair,Local Fair Campaign,2023-09-25,2023-10-09,1190.0,PO31
+171,Local Fair,Local Fair Campaign,2023-01-22,2023-02-01,1134.0,Island Wide
+172,Door-to-Door,Door-to-Door Campaign,2026-03-04,2026-03-16,980.0,PO40
+173,Billboards,Billboards Campaign,2025-03-23,2025-04-08,1102.0,PO37
+174,Instagram Influencer,Instagram Influencer Campaign,2024-05-09,2024-05-25,1482.0,PO40
+175,Door-to-Door,Door-to-Door Campaign,2023-09-10,2023-09-21,1214.0,Island Wide
+176,Door-to-Door,Door-to-Door Campaign,2025-03-26,2025-04-10,1031.0,Island Wide
+177,Google Search,Google Search Campaign,2023-01-28,2023-02-08,378.0,PO32
+178,Sponsorship,Sponsorship Campaign,2024-07-16,2024-07-27,1665.0,Island Wide
+179,Leaflets,Leaflets Campaign,2023-08-05,2023-08-26,900.0,PO32
+180,Google Search,Google Search Campaign,2024-11-05,2024-11-12,308.0,PO41
+181,Leaflets,Leaflets Campaign,2025-12-15,2026-01-02,1872.0,Island Wide
+182,Door-to-Door,Door-to-Door Campaign,2025-02-21,2025-03-14,630.0,Island Wide
+183,Sponsorship,Sponsorship Campaign,2025-06-04,2025-06-09,561.0,PO37
+184,Billboards,Billboards Campaign,2024-05-21,2024-05-30,1452.0,Island Wide
+185,Google Search,Google Search Campaign,2024-10-30,2024-11-15,1637.0,Island Wide
+186,Leaflets,Leaflets Campaign,2025-07-31,2025-08-15,345.0,PO32
+187,Billboards,Billboards Campaign,2024-09-13,2024-10-01,873.0,PO40
+188,Facebook Ads,Facebook Ads Campaign,2025-11-19,2025-12-10,1321.0,PO37
+189,Sponsorship,Sponsorship Campaign,2025-03-14,2025-03-31,757.0,PO41
+190,Leaflets,Leaflets Campaign,2024-09-24,2024-09-30,1142.0,Island Wide
+191,Google Search,Google Search Campaign,2023-04-28,2023-05-03,950.0,Island Wide
+192,Door-to-Door,Door-to-Door Campaign,2026-01-03,2026-01-18,1414.0,PO31
+193,Leaflets,Leaflets Campaign,2025-11-27,2025-12-06,1898.0,Island Wide
+194,Door-to-Door,Door-to-Door Campaign,2026-02-11,2026-02-15,1362.0,PO37
+195,Google Search,Google Search Campaign,2023-11-24,2023-12-10,1146.0,PO37
+196,Facebook Ads,Facebook Ads Campaign,2023-02-03,2023-02-08,1402.0,PO38
+197,Door-to-Door,Door-to-Door Campaign,2026-03-08,2026-03-12,1482.0,Island Wide
+198,Google Search,Google Search Campaign,2025-09-23,2025-10-06,1678.0,Island Wide
+199,Facebook Ads,Facebook Ads Campaign,2023-12-24,2024-01-02,465.0,Island Wide
+200,Facebook Ads,Facebook Ads Campaign,2025-04-26,2025-05-05,1874.0,PO41
+201,Sponsorship,Sponsorship Campaign,2025-08-19,2025-08-28,1282.0,Island Wide
+202,Google Search,Google Search Campaign,2023-08-18,2023-09-03,916.0,PO32
+203,Sponsorship,Sponsorship Campaign,2023-11-12,2023-11-30,1068.0,PO33
+204,Local Fair,Local Fair Campaign,2025-07-21,2025-07-27,1296.0,PO40
+205,Local Fair,Local Fair Campaign,2024-05-31,2024-06-16,866.0,PO37
+206,Facebook Ads,Facebook Ads Campaign,2025-07-16,2025-07-30,792.0,PO39
+207,Billboards,Billboards Campaign,2023-05-21,2023-06-07,1444.0,PO33
+208,Sponsorship,Sponsorship Campaign,2025-05-07,2025-05-25,1956.0,Island Wide
+209,Radio Ad,Radio Ad Campaign,2023-11-06,2023-11-22,1240.0,PO32
+210,Leaflets,Leaflets Campaign,2026-02-12,2026-02-24,1934.0,PO39
+211,Google Search,Google Search Campaign,2024-03-16,2024-03-27,385.0,PO40
+212,Billboards,Billboards Campaign,2023-08-23,2023-09-10,1412.0,PO41
+213,Leaflets,Leaflets Campaign,2024-09-12,2024-09-24,1875.0,Island Wide
+214,Facebook Ads,Facebook Ads Campaign,2023-02-24,2023-03-14,1805.0,PO30
+215,Instagram Influencer,Instagram Influencer Campaign,2023-12-06,2023-12-15,618.0,Island Wide
+216,Google Search,Google Search Campaign,2025-02-23,2025-03-02,778.0,Island Wide
+217,Sponsorship,Sponsorship Campaign,2023-06-13,2023-06-30,891.0,PO41
+218,Radio Ad,Radio Ad Campaign,2025-09-21,2025-10-02,615.0,PO39
+219,Radio Ad,Radio Ad Campaign,2024-01-14,2024-01-28,778.0,Island Wide
+220,Leaflets,Leaflets Campaign,2024-12-02,2024-12-10,755.0,Island Wide
+221,Billboards,Billboards Campaign,2025-01-10,2025-01-31,307.0,PO38
+222,Instagram Influencer,Instagram Influencer Campaign,2024-08-28,2024-09-01,1177.0,Island Wide
+223,Sponsorship,Sponsorship Campaign,2024-03-06,2024-03-23,1415.0,PO37
+224,Google Search,Google Search Campaign,2023-11-06,2023-11-09,1831.0,PO41
+225,Instagram Influencer,Instagram Influencer Campaign,2023-01-31,2023-02-06,515.0,PO33
+226,Facebook Ads,Facebook Ads Campaign,2025-04-07,2025-04-14,762.0,PO38
+227,Local Fair,Local Fair Campaign,2025-03-19,2025-03-29,739.0,PO34
+228,Radio Ad,Radio Ad Campaign,2024-10-06,2024-10-15,365.0,PO30
+229,Google Search,Google Search Campaign,2023-12-04,2023-12-17,1122.0,PO40
+230,Google Search,Google Search Campaign,2024-07-05,2024-07-18,770.0,PO30
+231,Sponsorship,Sponsorship Campaign,2025-06-29,2025-07-16,1476.0,PO33
+232,Local Fair,Local Fair Campaign,2025-01-31,2025-02-07,794.0,PO33
+233,Billboards,Billboards Campaign,2024-03-08,2024-03-25,921.0,PO40
+234,Radio Ad,Radio Ad Campaign,2023-08-20,2023-09-03,894.0,Island Wide
+235,Google Search,Google Search Campaign,2024-03-20,2024-03-26,946.0,Island Wide
+236,Google Search,Google Search Campaign,2024-09-25,2024-10-10,303.0,Island Wide
+237,Facebook Ads,Facebook Ads Campaign,2023-04-15,2023-04-28,752.0,PO33
+238,Leaflets,Leaflets Campaign,2024-12-27,2025-01-05,954.0,PO33
+239,Facebook Ads,Facebook Ads Campaign,2026-01-17,2026-02-04,1183.0,PO41
+240,Billboards,Billboards Campaign,2026-03-29,2026-04-16,1735.0,Island Wide
+241,Door-to-Door,Door-to-Door Campaign,2023-07-31,2023-08-06,1119.0,Island Wide
+242,Instagram Influencer,Instagram Influencer Campaign,2023-04-28,2023-05-17,1248.0,Island Wide
+243,Instagram Influencer,Instagram Influencer Campaign,2025-03-29,2025-04-05,1299.0,PO30
+244,Instagram Influencer,Instagram Influencer Campaign,2023-05-22,2023-06-10,1588.0,PO37
+245,Local Fair,Local Fair Campaign,2026-03-06,2026-03-16,895.0,PO41
+246,Sponsorship,Sponsorship Campaign,2025-12-09,2025-12-21,1157.0,PO38
+247,Local Fair,Local Fair Campaign,2024-04-23,2024-05-13,487.0,PO32
+248,Radio Ad,Radio Ad Campaign,2024-06-14,2024-06-22,418.0,Island Wide
+249,Radio Ad,Radio Ad Campaign,2023-06-25,2023-07-16,1675.0,Island Wide
+250,Sponsorship,Sponsorship Campaign,2025-07-08,2025-07-12,1993.0,PO39

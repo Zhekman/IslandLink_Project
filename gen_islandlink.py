@@ -152,29 +152,14 @@ def create_db():
         name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
         address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
         
-        cust_list.append({
-            'id': c_id,
-            'name': name,
-            'address': address,
-            'town': POSTCODES_CONFIG[district]['town'],
-            'postcode': pc,
-            'join_date': join_date_str,
-            'status': status,
-            'source': source,
-            'churn_date': churn_date
-        })
+        cust_list.append({'id': c_id, 'join_date': join_date_str, 'status': status, 'churn_date': churn_date, 'name': name, 'address': address, 'town': POSTCODES_CONFIG[district]['town'], 'postcode': pc, 'source': source})
         
-        # Initial Plan
         initial_plan = random.choices(PLANS[:3], weights=[p['weight'] for p in PLANS[:3]])[0]
-        
-        # Upsell Logic (20% chance to have an old plan)
-        if random.random() < 0.20:
+        if random.random() < 0.15: # Upsell history
             upgrade_date = join_date + timedelta(days=random.randint(60, 400))
             if upgrade_date < END_DATE:
                 new_plan = random.choice(PLANS[PLANS.index(initial_plan)+1:])
-                # Add old plan as inactive
                 sub_inserts.append((c_id, initial_plan['name'], initial_plan['rate'], join_date_str, 0))
-                # Add new plan as active
                 sub_inserts.append((c_id, new_plan['name'], new_plan['rate'], upgrade_date.strftime('%Y-%m-%d'), 1))
             else:
                 sub_inserts.append((c_id, initial_plan['name'], initial_plan['rate'], join_date_str, 1))
@@ -185,10 +170,9 @@ def create_db():
                        [(c['name'], c['address'], c['town'], c['postcode'], c['join_date'], c['status'], c['source'], c['churn_date']) for c in cust_list])
     cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_inserts)
 
-    # 4. Billing
-    print("Generating billing...")
+    # 4. Billing with Annual Price Increases
+    print("Generating billing with annual price increases...")
     billing_records = []
-    # Create a lookup for active rates
     active_plans = {s[0]: s[2] for s in sub_inserts if s[4] == 1}
 
     for i, cust in enumerate(cust_list):
@@ -198,13 +182,22 @@ def create_db():
             last_date = datetime.strptime(cust['churn_date'], '%Y-%m-%d')
         
         curr = datetime.strptime(cust['join_date'], '%Y-%m-%d')
-        rate = active_plans.get(c_id, 30.95)
+        base_rate = active_plans.get(c_id, 30.95)
         
         while curr <= last_date:
+            # Індексація цін кожного квітня (April)
+            current_rate = base_rate
+            if curr.year == 2024 and curr.month >= 4:
+                current_rate *= 1.05 # +5% у 2024
+            if curr.year == 2025 and curr.month >= 4:
+                current_rate *= 1.1025 # +5% ще раз у 2025 (разом 10.25%)
+            if curr.year == 2026 and curr.month >= 4:
+                current_rate *= 1.1576 # +5% ще раз у 2026
+            
             is_success = random.random() > 0.015
             status = 'Success' if is_success else 'Failed'
             reason = 'None' if is_success else random.choice(FAILURE_REASONS)
-            amount = rate if is_success else 0.0
+            amount = round(current_rate, 2) if is_success else 0.0
             
             billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, 'Direct Debit', status, reason))
             curr += timedelta(days=30)
@@ -218,7 +211,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print("Database finalized: Subscriptions history added.")
+    print("Database finalized: Annual price increases added.")
 
 if __name__ == '__main__':
     create_db()
