@@ -122,8 +122,8 @@ def create_db():
     cursor.executemany('INSERT INTO infrastructure VALUES (?, ?)', list(infra_data.items()))
 
     # 3. Customers & Subscriptions
-    cust_records = []
-    sub_records = []
+    cust_list = []
+    sub_list = []
     districts = list(POSTCODES_CONFIG.keys())
     weights = [POSTCODES_CONFIG[d]['weight'] for d in districts]
 
@@ -151,34 +151,41 @@ def create_db():
         name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
         address = f"{random.randint(1, 150)} {random.choice(STREETS)}"
         
-        cust_records.append((name, address, POSTCODES_CONFIG[district]['town'], pc, join_date_str, status, source, churn_date))
+        cust_record = {
+            'name': name,
+            'address': address,
+            'town': POSTCODES_CONFIG[district]['town'],
+            'postcode': pc,
+            'join_date': join_date_str,
+            'status': status,
+            'source': source,
+            'churn_date': churn_date
+        }
+        cust_list.append(cust_record)
         
         plan = random.choices(PLANS, weights=[p['weight'] for p in PLANS])[0]
-        sub_records.append((i+1, plan['name'], plan['rate'], join_date_str, 1))
+        sub_list.append({'customer_id': i+1, 'plan_name': plan['name'], 'rate': plan['rate'], 'start_date': join_date_str})
 
-    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', cust_records)
-    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,?)', sub_records)
+    cursor.executemany('INSERT INTO customers (name, street_address, town, postcode, join_date, status, acquisition_source, churn_date) VALUES (?,?,?,?,?,?,?,?)', 
+                       [(c['name'], c['address'], c['town'], c['postcode'], c['join_date'], c['status'], c['source'], c['churn_date']) for c in cust_list])
+    cursor.executemany('INSERT INTO subscriptions VALUES (?,?,?,?,1)', 
+                       [(s['customer_id'], s['plan_name'], s['rate'], s['start_date']) for s in sub_list])
 
-    # 4. Billing with Statuses
+    # 4. Billing
     print("Generating billing with payment statuses...")
     billing_records = []
-    for i in range(len(cust_records)):
+    for i, cust in enumerate(cust_list):
         c_id = i + 1
-        c_status = cust_records[i][6]
-        c_join_date = cust_records[i][5]
-        c_churn_date = cust_records[i][8]
+        last_date = END_DATE
+        if cust['status'] == 'Churned' and cust['churn_date']:
+            last_date = datetime.strptime(cust['churn_date'], '%Y-%m-%d')
         
-        last_bill_date = END_DATE
-        if c_status == 'Churned' and c_churn_date:
-            last_bill_date = datetime.strptime(c_churn_date, '%Y-%m-%d')
-        
-        curr = datetime.strptime(c_join_date, '%Y-%m-%d')
-        while curr <= last_bill_date:
-            # 94% success rate
+        curr = datetime.strptime(cust['join_date'], '%Y-%m-%d')
+        while curr <= last_date:
             is_success = random.random() > 0.06
             status = 'Success' if is_success else 'Failed'
             reason = 'None' if is_success else random.choice(FAILURE_REASONS)
-            amount = sub_records[i][2] if is_success else 0.0
+            amount = sub_list[i]['rate'] if is_success else 0.0
             
             billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, 'Direct Debit', status, reason))
             curr += timedelta(days=30)
@@ -192,7 +199,7 @@ def create_db():
 
     conn.commit()
     conn.close()
-    print("Database updated: Added payment statuses and failure reasons.")
+    print("Database finalized: All features active.")
 
 if __name__ == '__main__':
     create_db()
