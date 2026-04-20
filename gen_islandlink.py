@@ -182,7 +182,8 @@ def create_db():
         
         curr = datetime.strptime(cust['join_date'], '%Y-%m-%d')
         while curr <= last_date:
-            is_success = random.random() > 0.06
+            # 98.5% success rate
+            is_success = random.random() > 0.015
             status = 'Success' if is_success else 'Failed'
             reason = 'None' if is_success else random.choice(FAILURE_REASONS)
             amount = sub_list[i]['rate'] if is_success else 0.0
