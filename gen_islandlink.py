@@ -199,7 +199,8 @@ def create_db():
             reason = 'None' if is_success else random.choice(FAILURE_REASONS)
             amount = round(current_rate, 2) if is_success else 0.0
             
-            billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, 'Direct Debit', status, reason))
+            method = random.choices(['Direct Debit', 'Credit Card', 'Bank Transfer'], weights=[80, 15, 5])[0]
+            billing_records.append((c_id, curr.strftime('%Y-%m-%d'), amount, method, status, reason))
             curr += timedelta(days=30)
             
             if len(billing_records) > 50000:
